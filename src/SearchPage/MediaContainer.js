@@ -4,7 +4,7 @@ import Media from './Media'
 const MediaContainer = (props) => {
   return (
     <div>
-      {props.media.map(m => <Media media={m} />)}
+      {props.media.map(m => <Media key={m.href} media={m} />)}
     </div>
   )
 }

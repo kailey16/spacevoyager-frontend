@@ -3,6 +3,7 @@ import MediaContainer from './MediaContainer'
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 import { fetchingMedia } from '../redux/actions'
+import '../style/SearchPage.css'
 
 
 class SearchPage extends React.Component {
