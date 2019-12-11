@@ -1,13 +1,17 @@
 import React from "react";
 import ImgContainer from './ImgContainer'
+import '../style/MarsRover.css'
 
-const MarsRover = () => {
-  return (
-    <div>
-      MarsRover
-      <ImgContainer />
-    </div>
-  )
+class MarsRover extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <ImgContainer />
+      </div>
+    )
+  }
+
 }
 
 export default MarsRover

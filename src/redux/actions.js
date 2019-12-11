@@ -1,15 +1,27 @@
-// export const actionname = () => {
-//   return (dispatch) => {
+// Mars Rover page actions
 
-//     dispatch({ type: 'LOADING_CATS'})
+function fetchedRoverPhotos(photos) {
+  return {type: "FETCH_ROVERPHOTOS", payload: photos}
+}
 
-//     fetch('https://learn-co-curriculum.github.io/cat-api/cats.json')
-//     .then(response => response.json())
-//     .then(responseJSON => {
-//       dispatch({ type: 'ADD_CATS', cats: responseJSON.images })
-      
-//     })
-//   }
-// }
+export function fetchingRoverPhotos() {
+  return (dispatch) => {
+    fetch("http://localhost:3001/marsrover")
+    .then(resp => resp.json())
+    .then(photos => dispatch(fetchedRoverPhotos(photos)))
+  } 
+}
 
-// export const 
+// NASA library search page actions
+
+function fetchedMedia(media) {
+  return {type: "FETCH_LIBRARYMEDIA", payload: media}
+}
+
+export function fetchingMedia() {
+  return (dispatch) => {
+    fetch("http://localhost:3001/nasalibrary")
+    .then(resp => resp.json())
+    .then(media => dispatch(fetchedMedia(media)))
+  } 
+}

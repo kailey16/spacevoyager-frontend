@@ -1,13 +1,32 @@
 import React from "react";
-// import Img from './Img'
+import Img from './Img'
+import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
+import { fetchingRoverPhotos } from '../redux/actions'
 
-const ImgContainer = () => {
-  return (
-    <div>
-      ImgContainer
-      {/* <Img /> */}
-    </div>
-  )
+
+class ImgContainer extends React.Component {
+  
+  componentDidMount() {
+    this.props.fetchingRoverPhotos()
+  }
+  
+  render() {
+    return (
+      <div>
+        {this.props.photos.map(photo => <Img photo={photo}/>)}
+      </div>
+    )
+  }
+ 
 }
 
-export default ImgContainer
+const mapStateToProps = (state) => {
+  return {photos: state.roverPhotos}
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {fetchingRoverPhotos: () => dispatch(fetchingRoverPhotos())}
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ImgContainer))

@@ -1,11 +1,19 @@
 import React from "react";
 
-const Media = () => {
-  return (
-    <div>
-      Media
-    </div>
-  )
+class Media extends React.Component {
+
+  componentDidMount(){
+    fetch(`${this.props.media["href"]}`)
+  }
+
+  render() {
+    return (
+      <div>
+        {}
+      </div>
+    )
+  }
+
 }
 
 export default Media

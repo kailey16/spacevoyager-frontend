@@ -1,13 +1,32 @@
 import React from "react";
 import MediaContainer from './MediaContainer'
+import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
+import { fetchingMedia } from '../redux/actions'
 
-const SearchPage = () => {
-  return (
-    <div>
-      SearchPage
-      <MediaContainer />
-    </div>
-  )
+
+class SearchPage extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchingMedia()
+  }
+
+  render() {
+    return (
+      <div>
+        <MediaContainer media={this.props.media}/>
+      </div>
+    )
+  }
+
 }
 
-export default SearchPage
+const mapStateToProps = (state) => {
+  return {media: state.searchMedia}
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {fetchingMedia: () => dispatch(fetchingMedia())}
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchPage))

@@ -1,11 +1,10 @@
 import React from "react";
-// import Media from './Media'
+import Media from './Media'
 
-const MediaContainer = () => {
+const MediaContainer = (props) => {
   return (
     <div>
-      MediaContainer
-      {/* <Media /> */}
+      {props.media.map(m => <Media media={m} />)}
     </div>
   )
 }

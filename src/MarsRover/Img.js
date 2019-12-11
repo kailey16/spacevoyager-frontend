@@ -1,9 +1,9 @@
 import React from "react";
 
-const Img = () => {
+const Img = (props) => {
   return (
     <div>
-      Img
+      <img className="roverImg" src={props.photo["img_src"]} alt="roverImg"/>
     </div>
   )
 }
