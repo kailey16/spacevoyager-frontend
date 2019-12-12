@@ -16,7 +16,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        APP
         <Navbar />
         <Route exact path='/' component={Home} />
         <Route exact path='/marsrover' component={MarsRover} />

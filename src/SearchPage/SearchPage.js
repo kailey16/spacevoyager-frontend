@@ -2,7 +2,7 @@ import React from "react";
 import MediaContainer from './MediaContainer'
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
-import { fetchingMedia, searchKeywordOnchange } from '../redux/actions'
+import { fetchingMedia, searchKeywordChange, fetchingWithKeyword } from '../redux/actions'
 import '../style/SearchPage.css'
 
 
@@ -12,12 +12,25 @@ class SearchPage extends React.Component {
     this.props.fetchingMedia()
   }
 
+  handleFormSubmitted = (e) => {
+    e.preventDefault();
+    this.props.fetchingWithKeyword(this.props.searchKeyword)
+    this.props.searchKeywordChange("")
+  }
+
+  handleKeywordOnchange = (e) => {
+    this.props.searchKeywordChange(e.target.value)
+  }
+
   render() {
     return (
       <div>
         <div>
-          <form id="searchForm">
-            <input type="text" name="searchInput" placeholder="Type your search keyword..." value={this.props.searchKeyword} onChange={this.props.searchKeywordOnchange} />
+          <div>
+            <p>Search anything you want to see from the NASA library</p>
+          </div>
+          <form id="searchForm" onSubmit={this.handleFormSubmitted}>
+            <input type="text" name="searchInput" placeholder="Type your search keyword..." value={this.props.searchKeyword} onChange={this.handleKeywordOnchange} />
             <input type="submit" />
           </form>
         </div>
@@ -38,7 +51,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchingMedia: () => dispatch(fetchingMedia()),
-    searchKeywordOnchange: (e) => dispatch(searchKeywordOnchange(e.target.value))
+    searchKeywordChange: (searchTerm) => dispatch(searchKeywordChange(searchTerm)),
+    fetchingWithKeyword: (keyword) => dispatch(fetchingWithKeyword(keyword))
   }
 }
 

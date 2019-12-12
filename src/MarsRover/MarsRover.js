@@ -7,6 +7,7 @@ class MarsRover extends React.Component {
   render() {
     return (
       <div>
+        <p>Explore photos taken by Mars Rover Cameras</p>
         <ImgContainer />
       </div>
     )
