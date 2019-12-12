@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#navbar {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2vh;
+}
+
+#websitetitle {
+  font-weight: 700;
+  font-size: 2.6vh;
+}

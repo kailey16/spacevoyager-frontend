@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 
+///// MarsRovers page
+// photos array
 const roverReducer = (state = [], action) => {
   switch(action.type) {
     case "FETCH_ROVERPHOTOS":
@@ -9,6 +11,8 @@ const roverReducer = (state = [], action) => {
   }
 }
 
+///// SearchPage
+// media array
 const searchReducer = (state = [], action) => {
   switch(action.type) {
     case "FETCH_LIBRARYMEDIA":
@@ -20,6 +24,7 @@ const searchReducer = (state = [], action) => {
   }
 }
 
+// searchbar searchterm string
 const searchKeywordReducer = (state = "", action) => {
   switch(action.type) {
     case "SEARCH_KEYWORD_ONCHANGE":

@@ -1,5 +1,5 @@
-// Mars Rover page actions
-
+///// Mars Rover page actions
+// initial fetch to display
 function fetchedRoverPhotos(photos) {
   return {type: "FETCH_ROVERPHOTOS", payload: photos}
 }

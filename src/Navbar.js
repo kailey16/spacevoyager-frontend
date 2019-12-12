@@ -1,27 +1,18 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <div class="ui secondary  menu">
-      <a class="active item">
-        Home
-      </a>
-      <a class="item">
-        Messages
-      </a>
-      <a class="item">
-        Friends
-      </a>
-      <div class="right menu">
-        <div class="item">
-          <div class="ui icon input">
-            <input type="text" placeholder="Search..." />
-            <i class="search link icon"></i>
-          </div>
-        </div>
-        <a class="ui item">
-          Logout
-        </a>
+    <div id="navbar" className="ui secondary menu">
+      <Link id="websitetitle" className="item" to="/">
+        SpaceVoyager
+      </Link>
+      <div className="right menu">
+        <Link className="item" to="/marsrover">Mars Rover</Link>
+        <Link className="item" to="/searchpage">NASAlib</Link>
+        <Link className="item" to="/marsweather">Mars weather</Link>
+        <Link className="item" to="/profile">Profile</Link>
+        <Link className="item" to="/login">Login</Link>
       </div>
     </div>
   )

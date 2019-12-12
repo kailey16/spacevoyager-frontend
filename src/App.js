@@ -10,6 +10,7 @@ import MarsWeather from './MarsWeather/MarsWeather'
 import Profile from './Profile/Profile'
 import LibraryPage from './Profile/LibraryPage'
 import LoginPage from './LoginSignup/LoginPage'
+import './style/App.css'
 
 
 class App extends React.Component {
