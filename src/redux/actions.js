@@ -25,3 +25,7 @@ export function fetchingMedia() {
     .then(media => dispatch(fetchedMedia(media)))
   } 
 }
+
+export function searchKeywordOnchange(searchKeyword) {
+  return {type: "SEARCH_KEYWORD_ONCHANGE", payload: searchKeyword}
+}

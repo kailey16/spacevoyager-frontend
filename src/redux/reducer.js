@@ -18,9 +18,19 @@ const searchReducer = (state = [], action) => {
   }
 }
 
+const searchKeywordReducer = (state = "", action) => {
+  switch(action.type) {
+    case "SEARCH_KEYWORD_ONCHANGE":
+      return action.payload
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
   roverPhotos: roverReducer,
-  searchMedia: searchReducer
+  searchMedia: searchReducer,
+  searchKeyword: searchKeywordReducer
 })
 
 

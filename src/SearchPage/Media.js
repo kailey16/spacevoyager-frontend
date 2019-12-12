@@ -8,13 +8,23 @@ class Media extends React.Component {
   componentDidMount(){
     fetch(`${this.props.media["href"]}`)
     .then(res => res.json())
-    .then(data => { this.setState({media_url: data[0]})})
+    .then(data => {
+      if (this.props.media["data"][0]["media_type"] === "video") {
+        let mp4Url = data.find(url => {
+          let splittedurl = url.split(".")
+          if(splittedurl[splittedurl.length-1] === "mp4") { return true} else {return false}
+        })
+        return this.setState({media_url: mp4Url})
+      } else {return this.setState({media_url: data[0]})}
+    })
   }
 
   render() {
     return (
       <div>
-        {this.props.media["data"][0]["media_type"] === "video" ? null : <img className="imageMedia" alt="libraryMedia" src={this.state.media_url} />}
+        {this.props.media["data"][0]["media_type"] === "video" ? (
+        <video className="searchedMedia" controls src={this.state.media_url} />
+        ) : <img className="searchedMedia" alt="libraryMedia" src={this.state.media_url} />}
       </div>
     )
   }

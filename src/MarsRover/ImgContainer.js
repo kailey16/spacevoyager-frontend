@@ -14,7 +14,7 @@ class ImgContainer extends React.Component {
   render() {
     return (
       <div>
-        {this.props.photos.map(photo => <Img photo={photo}/>)}
+        {this.props.photos.map(photo => <Img key={photo.id} photo={photo}/>)}
       </div>
     )
   }
