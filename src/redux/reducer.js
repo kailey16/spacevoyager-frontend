@@ -34,10 +34,22 @@ const searchKeywordReducer = (state = "", action) => {
   }
 }
 
+///// Mars weather page
+// fetching info
+const marsWeatherReducer = (state = {}, action) => {
+  switch(action.type) {
+    case "FETCH_WEATHERINFO":
+      return action.payload
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
   roverPhotos: roverReducer,
   searchMedia: searchReducer,
-  searchKeyword: searchKeywordReducer
+  searchKeyword: searchKeywordReducer,
+  marsWeather: marsWeatherReducer
 })
 
 

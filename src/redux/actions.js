@@ -12,6 +12,20 @@ export function fetchingRoverPhotos() {
   } 
 }
 
+///// Mars weather page actions
+// fetch weather info
+function fetchedWeatherInfo(info) {
+  return {type: "FETCH_WEATHERINFO", payload: info}
+}
+
+export function fetchingWeatherInfo() {
+  return (dispatch) => {
+    fetch("http://localhost:3001/marsweather")
+    .then(resp => resp.json())
+    .then(info => dispatch(fetchedWeatherInfo(info)))
+  } 
+}
+
 
 ///// NASA library search page actions
 // initial fetch to display
