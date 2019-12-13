@@ -1,7 +1,8 @@
 import React from "react";
 // import WeatherCard from './WeatherCard'
 
-const WeatherContainer = () => {
+const WeatherContainer = (props) => {
+  // const sol_keys = this.props.info["sol_keys"]
   return (
     <div>
       WeatherContainer
