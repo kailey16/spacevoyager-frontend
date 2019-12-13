@@ -24,7 +24,7 @@ class MarsRover extends React.Component {
 
   radioClicked = (e) => {
     const camname = e.target.name
-    this.setState({[`${e.target.name}`]: !this.state[camname], showall: false})
+    this.setState({[e.target.name]: !this.state[camname], showall: false})
   }
 
   showallClicked = () => {

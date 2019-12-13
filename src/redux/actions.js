@@ -12,6 +12,8 @@ export function fetchingRoverPhotos() {
   } 
 }
 
+
+
 ///// Mars weather page actions
 // fetch weather info
 function fetchedWeatherInfo(info) {
@@ -25,6 +27,7 @@ export function fetchingWeatherInfo() {
     .then(info => dispatch(fetchedWeatherInfo(info)))
   } 
 }
+
 
 
 ///// NASA library search page actions
@@ -64,4 +67,34 @@ export function fetchingWithKeyword(keyword) {
     .then(resp => resp.json())
     .then(media => dispatch(fetchedWithKeyword(media)))
   }
+}
+
+
+
+///// Login/Signup page actions
+function setCurrentUser(user) {
+  return {type: "SET_CURRENT_USER", payload: user}
+}
+
+export function loginRequest(loginInfo) {
+  fetch('http://localhost:3001/api/v1/login', {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }, 
+    body: JSON.stringify({
+    user: {
+        username: loginInfo.username,
+        password: loginInfo.password
+      }
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+    localStorage.setItem("jwt", data.jwt)
+    this.setState({currentUser: data.user})
+    this.getMovieLists(data.user)
+  })
 }

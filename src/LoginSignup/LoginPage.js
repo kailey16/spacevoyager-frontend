@@ -5,7 +5,6 @@ import SignupForm from './SignupForm'
 const LoginPage = () => {
   return (
     <div>
-      LoginPage
       <LoginForm />
       <SignupForm />
     </div>

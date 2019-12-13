@@ -1,0 +1,23 @@
+.weatherCard {
+  display: inline-block !important;
+  margin-right: 2vw;
+  text-align: center;
+}
+
+.weatherCardTop {
+  width: 12vw;
+  height: 12vw;
+  background-image: url('../Images/mars1.jpg');
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+}
+
+.weatherCardBottom {
+  width: 12vw;
+  height: 12vw;
+}
+
+.latestDayCard {
+  text-align: center;
+}

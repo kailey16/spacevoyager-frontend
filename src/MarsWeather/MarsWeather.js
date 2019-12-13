@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 import { fetchingWeatherInfo } from '../redux/actions'
 import LatestDayCard from './LatestDayCard'
+import '../style/MarsWeather.css'
 
 class MarsWeather extends React.Component {
 
@@ -17,8 +18,8 @@ class MarsWeather extends React.Component {
 
     return (
       <div>
-        <WeatherContainer info={this.props.info} />
         <LatestDayCard latestDayInfo={latestDayInfo}/>
+        <WeatherContainer info={this.props.info} />
       </div> 
     )
   }

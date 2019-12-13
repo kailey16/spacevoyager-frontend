@@ -9,7 +9,7 @@ const roverReducer = (state = [], action) => {
     default:
       return state
   }
-}
+}  
 
 ///// SearchPage
 // media array
