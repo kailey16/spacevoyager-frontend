@@ -77,24 +77,24 @@ function setCurrentUser(user) {
 }
 
 export function loginRequest(loginInfo) {
-  fetch('http://localhost:3001/api/v1/login', {
-    method: 'POST', 
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }, 
-    body: JSON.stringify({
-    user: {
-        username: loginInfo.username,
-        password: loginInfo.password
-      }
+  return (dispatch) => {
+    fetch('http://localhost:3001/api/v1/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }, 
+      body: JSON.stringify({
+        user: {
+          username: loginInfo.username,
+          password: loginInfo.password
+        }
+      })
     })
-  })
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-    localStorage.setItem("jwt", data.jwt)
-    this.setState({currentUser: data.user})
-    this.getMovieLists(data.user)
-  })
+    .then(res => res.json())
+    .then(data => {
+      localStorage.setItem("jwt", data.jwt)
+      dispatch(setCurrentUser(data.user))
+    })
+  }
 }

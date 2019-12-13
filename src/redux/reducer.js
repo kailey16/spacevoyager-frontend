@@ -45,11 +45,22 @@ const marsWeatherReducer = (state = {}, action) => {
   }
 }
 
+///// Current user page
+const currentUserReducer = (state={}, action) => {
+  switch(action.type) {
+    case "SET_CURRENT_USER":
+      return action.payload
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
   roverPhotos: roverReducer,
   searchMedia: searchReducer,
   searchKeyword: searchKeywordReducer,
-  marsWeather: marsWeatherReducer
+  marsWeather: marsWeatherReducer,
+  currentUser: currentUserReducer
 })
 
 
