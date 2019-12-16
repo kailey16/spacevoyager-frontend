@@ -1,7 +1,6 @@
-import React from 'react';
+import React from 'react'; 
 import { Route } from 'react-router-dom';
-// import { Route, withRouter } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import Navbar from './Navbar'
 import Home from './Home/Home'
 import MarsRover from './MarsRover/MarsRover'
@@ -11,9 +10,15 @@ import Profile from './Profile/Profile'
 import LibraryPage from './Profile/LibraryPage'
 import LoginPage from './LoginSignup/LoginPage'
 import './style/App.css'
+import { getCurrentUser } from './redux/actions'
  
 
 class App extends React.Component {
+
+  componentDidMount() {
+    this.props.getCurrentUser()
+  }
+
   render() {
     return (
       <div>
@@ -24,10 +29,17 @@ class App extends React.Component {
         <Route exact path='/marsweather' component={MarsWeather} />
         <Route exact path='/profile' component={Profile} />
         <Route exact path='/library/:id' component={LibraryPage} />
+        {}
         <Route exact path='/login' component={LoginPage} />
       </div>
     )
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getCurrentUser: () => dispatch(getCurrentUser())
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);

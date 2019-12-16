@@ -1,4 +1,4 @@
-///// Mars Rover page actions
+///// Mars Rover page actions 
 // initial fetch to display
 function fetchedRoverPhotos(photos) {
   return {type: "FETCH_ROVERPHOTOS", payload: photos}
@@ -36,7 +36,7 @@ function fetchedMedia(media) {
   return {type: "FETCH_LIBRARYMEDIA", payload: media}
 }
 
-export function fetchingMedia() {
+export function fetchingMedia() { 
   return (dispatch) => {
     fetch("http://localhost:3001/nasalibrary")
     .then(resp => resp.json())
@@ -76,6 +76,7 @@ function setCurrentUser(user) {
   return {type: "SET_CURRENT_USER", payload: user}
 }
 
+// login
 export function loginRequest(loginInfo) {
   return (dispatch) => {
     fetch('http://localhost:3001/api/v1/login', {
@@ -93,8 +94,63 @@ export function loginRequest(loginInfo) {
     })
     .then(res => res.json())
     .then(data => {
-      localStorage.setItem("jwt", data.jwt)
-      dispatch(setCurrentUser(data.user))
+      if (data.user) {
+        localStorage.setItem("jwt", data.jwt)
+        dispatch(setCurrentUser(data.user))
+      } else {alert(`${data.message}`)}
     })
+  }
+}
+
+// singup
+export function signupRequest(signupInfo) {
+  return (dispatch) => {
+    fetch('http://localhost:3001/api/v1/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+      user: {
+        username: signupInfo.username,
+        password: signupInfo.password,
+        email: signupInfo.email
+        }
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.user) {
+        localStorage.setItem("jwt", data.jwt)
+        dispatch(setCurrentUser(data.user))
+      } else {alert(`${data.error.join(", ")}`)}
+    })
+    .catch(error => alert(`${error.message}`))
+  }
+}
+
+// get current user
+export function getCurrentUser() {
+  return (dispatch) => {
+    if(localStorage.getItem('jwt')){
+      fetch('http://localhost:3001/api/v1/profile', {
+        headers: {
+          "Authorization" : `Bearer ${localStorage.getItem('jwt')}`
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        dispatch(setCurrentUser(data.user))
+      })
+    }
+  }
+}
+
+// log out
+export function logOut() {
+  return (dispatch) => {
+    localStorage.removeItem('jwt')
+    dispatch(setCurrentUser({}))
   }
 }
