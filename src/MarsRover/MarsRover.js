@@ -8,7 +8,7 @@ import { fetchingRoverPhotos } from '../redux/actions'
 
 
 class MarsRover extends React.Component {
-  
+   
   state = {
     showall: true,
     fhaz: false,
@@ -39,7 +39,7 @@ class MarsRover extends React.Component {
 
     return (
       <div className="MarsRoverPage">
-        <CameraRadio fhaz={this.state.fhaz} rhaz={this.state.rhaz} mast={this.state.mast} chemcam={this.state.chemcam} navcam={this.state.navcam} radioClicked={this.radioClicked} showallClicked={this.showallClicked} />
+        <CameraRadio fhaz={this.state.fhaz} rhaz={this.state.rhaz} mast={this.state.mast} chemcam={this.state.chemcam} navcam={this.state.navcam} radioClicked={this.radioClicked} showallClicked={this.showallClicked} /><br></br>
         <ImgContainer photos={rendering_photos}/>
       </div>
     )

@@ -21,10 +21,20 @@ class Media extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.props.media["data"][0]["media_type"] === "video" ? (
-        <video className="searchedMedia" controls src={this.state.media_url} />
-        ) : <img className="searchedMedia" alt="libraryMedia" src={this.state.media_url} />}
+      <div >
+        <div className="mediaCard">
+          <p>Title</p>
+        {this.props.media["data"][0]["media_type"] === "video" ? 
+        (<div>
+        <video className="mediaImage" controls src={this.state.media_url} />
+        <button id="saveToLibButton" className="ui button">Save To My Library</button>
+        </div>)
+        : (<div>
+        <img className="mediaImage" alt="libraryMedia" src={this.state.media_url} onClick={() => this.props.bigImageShow(this.state.media_url)}/>
+        <button id="saveToLibButton" className="ui button">Save To My Library</button>
+        </div>)
+        }
+        </div>
       </div>
     )
   }

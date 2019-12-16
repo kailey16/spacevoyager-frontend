@@ -9,7 +9,7 @@
 
 .ui.form.searchForm {
   width: 30vw;
-  margin-left: 35vw;
+  margin-left: 35vw; 
 }
 
 .MediaContainer {
@@ -18,13 +18,17 @@
   grid-template-columns: 25vw 25vw 25vw;
   grid-template-rows: auto;
   grid-template-areas: 
-    "img img img";
+    "card card card";
   grid-column-gap: 2.5vw;
   grid-row-gap: 2.5vw;
   /* justify-items: stretch; */
 }
 
-.searchedMedia {
+.mediaCard {
+  background-color: rgba(63, 60, 60, 0.979);
+}
+
+.mediaImage {
   height: 30vh;
   width: 25vw;
 }
