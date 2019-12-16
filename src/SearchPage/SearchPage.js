@@ -28,10 +28,10 @@ class SearchPage extends React.Component {
         <div className="searchFormContinaer">
           <p>Search anything you want to see from the NASA library</p>
           <form id="searchForm" className="ui form searchForm" onSubmit={this.handleFormSubmitted}>
-            <div className="field">
+            <div id="searchBar" className="field">
               <input type="text" name="searchInput" placeholder="Type your search keyword..." value={this.props.searchKeyword} onChange={this.handleKeywordOnchange} />
             </div>
-            <input className="ui button" type="submit" value="search"/>
+            <input id="searchSubmitButton" className="ui inverted red button" type="submit" value="search"/>
           </form>
         </div>
         <MediaContainer media={this.props.media}/>

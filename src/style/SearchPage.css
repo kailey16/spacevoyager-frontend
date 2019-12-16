@@ -12,6 +12,14 @@
   margin-left: 35vw; 
 }
 
+/* #searchBar {
+  display: inline;
+}
+
+#searchSubmitButton {
+  display: inline;
+} */
+
 .MediaContainer {
   margin: 0 10vw 0 10vw;
   display: grid;
@@ -25,10 +33,32 @@
 }
 
 .mediaCard {
-  background-color: rgba(63, 60, 60, 0.979);
+  background-image: linear-gradient(#333333, #93291E);
+  height: 55vh;
+}
+
+.mediaVedio {
+  height: 30vh;
+  width: 25vw;
 }
 
 .mediaImage {
+  margin-top: 2vh;
   height: 30vh;
   width: 25vw;
+}
+
+.mediaTitle {
+  font-size: 2vh;
+  font-weight: 600;
+  padding-top: 1vh;
+}
+
+.mediaDescription {
+  overflow: scroll;
+  height: 10vh;
+}
+
+#libSaveButton {
+  margin-top: 2vh;
 }

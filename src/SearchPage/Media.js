@@ -23,17 +23,17 @@ class Media extends React.Component {
     return (
       <div >
         <div className="mediaCard">
-          <p>Title</p>
+          <div className="mediaTitle">{this.props.media["data"][0]["title"]}</div>
         {this.props.media["data"][0]["media_type"] === "video" ? 
         (<div>
-        <video className="mediaImage" controls src={this.state.media_url} />
-        <button id="saveToLibButton" className="ui button">Save To My Library</button>
+        <video className="mediaVedio" controls src={this.state.media_url} />
         </div>)
         : (<div>
         <img className="mediaImage" alt="libraryMedia" src={this.state.media_url} onClick={() => this.props.bigImageShow(this.state.media_url)}/>
-        <button id="saveToLibButton" className="ui button">Save To My Library</button>
         </div>)
         }
+        <div className="mediaDescription">{this.props.media["data"][0]["description"]}</div>
+        <button id="libSaveButton" className="ui inverted grey button">Save To My Library</button>
         </div>
       </div>
     )
