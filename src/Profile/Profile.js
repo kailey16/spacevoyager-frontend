@@ -1,15 +1,26 @@
 import React from "react";
 import UserInfo from './UserInfo'
 import LibraryContainer from './LibraryContainer'
+import '../style/Profile.css'
+import { connect } from 'react-redux';
+import NewLibraryForm from './NewLibraryForm'
 
-const Profile = () => {
-  return (
-    <div>
-      Profile
-      <UserInfo />
-      <LibraryContainer />
-    </div>
-  )
+class Profile extends React.Component {
+
+  render() {
+    return (
+      <div className="profileContainer">
+        <UserInfo currentUser={this.props.currentUser} />
+        <LibraryContainer />
+        <NewLibraryForm />
+      </div>
+    )
+  }
+
 }
 
-export default Profile
+const mapStateToProps = (state) => {
+  return {currentUser: state.currentUser}
+}
+
+export default connect(mapStateToProps)(Profile)

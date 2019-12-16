@@ -1,0 +1,23 @@
+.profileContainer {
+  display: grid;
+  grid-template-columns: 25vw 50vw 25vw;
+  grid-template-rows: 100%;
+  grid-template-areas: 
+    "userinfo libraries recent";
+}
+
+.UserInfo {
+  grid-area: userinfo;
+}
+
+.recentCon {
+  grid-area: recent;
+}
+
+.LibraryContainer {
+  grid-area: libraries;
+}
+
+#libraryForm {
+  width: 20vw;
+}

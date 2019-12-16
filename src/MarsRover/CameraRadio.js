@@ -6,7 +6,7 @@ const CameraRadio = (props) => {
   return (
     <div className="roverCameraRadio">
       <p className="roverRadioTitle">Explore photos taken by Mars Rover Cameras</p>
-      <div>
+      <div className="radioButtonBox">
         <input className="cameraRadioOption" type="radio" id="fhaz" name="fhaz" checked={props.fhaz} onClick={props.radioClicked} />
         <label htmlFor="fhazrhaz">FHAZ</label>
 
