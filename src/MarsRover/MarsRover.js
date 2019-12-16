@@ -38,7 +38,7 @@ class MarsRover extends React.Component {
     })
 
     return (
-      <div>
+      <div className="MarsRoverPage">
         <CameraRadio fhaz={this.state.fhaz} rhaz={this.state.rhaz} mast={this.state.mast} chemcam={this.state.chemcam} navcam={this.state.navcam} radioClicked={this.radioClicked} showallClicked={this.showallClicked} />
         <ImgContainer photos={rendering_photos}/>
       </div>

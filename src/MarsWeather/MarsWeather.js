@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import { fetchingWeatherInfo } from '../redux/actions'
 import LatestDayCard from './LatestDayCard'
 import '../style/MarsWeather.css'
+import MarsWeatherInfo from './MarsWeatherInfo'
 
 class MarsWeather extends React.Component {
 
@@ -17,7 +18,8 @@ class MarsWeather extends React.Component {
     const latestDayInfo = sol_keys ? this.props.info[sol_keys[sol_keys.length -1]] : null
 
     return (
-      <div>
+      <div className="MarsWeatherPage">
+        <MarsWeatherInfo />
         <LatestDayCard latestDayInfo={latestDayInfo}/>
         <WeatherContainer info={this.props.info} />
       </div> 

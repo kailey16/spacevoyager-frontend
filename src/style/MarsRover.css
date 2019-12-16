@@ -1,4 +1,51 @@
+.MarsRoverPage {
+  text-align: center;
+}
+
+.roverCameraRadio {
+  margin: 5vh 0 5vh 0;
+}
+
+.roverRadioTitle {
+  font-size: 3vh;
+}
+
+.cameraRadioOption {
+  margin: 0 0.2vw 0 1vw;
+}
+
+#showall {
+  margin-left: 2vw;
+  padding: 0.7vw 1.2vw 0.7vw 1.2vw;
+}
+
+.ImgContainer {
+  margin: 0 10vw 0 10vw;
+  display: grid;
+  grid-template-columns: 25vw 25vw 25vw;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "img img img";
+  grid-column-gap: 2.5vw;
+  grid-row-gap: 2.5vw;
+  /* justify-items: stretch; */
+}
+
 .roverImg {
   height: 30vh;
-  width: auto;
+  width: 25vw;
+}
+
+.imgShowContainer {
+  align-content: center;
+  margin-bottom: 10vh;
+}
+
+.imgShow {
+  width: 70vw;
+  height: auto;
+}
+
+#backToGalleryButton {
+  margin-bottom: 3vh;
 }

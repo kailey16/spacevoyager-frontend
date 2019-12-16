@@ -1,4 +1,30 @@
+.SearchPage {
+  text-align: center;
+}
+
+.searchFormContinaer {
+  margin: 5vh 0 5vh 0;
+  font-size: 3vh;
+}
+
+.ui.form.searchForm {
+  width: 30vw;
+  margin-left: 35vw;
+}
+
+.MediaContainer {
+  margin: 0 10vw 0 10vw;
+  display: grid;
+  grid-template-columns: 25vw 25vw 25vw;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "img img img";
+  grid-column-gap: 2.5vw;
+  grid-row-gap: 2.5vw;
+  /* justify-items: stretch; */
+}
+
 .searchedMedia {
   height: 30vh;
-  width: auto;
+  width: 25vw;
 }

@@ -1,3 +1,41 @@
+.MarsWeatherPage {
+  background-image: url('../Images/mars4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.MarsWeatherInfo {
+  grid-area: infoCon;
+  justify-self: start;
+}
+.latestDayCard {
+  grid-area: lastDay;
+  justify-self: end;
+}
+.WeatherContainer {
+  grid-area: weatherCon;
+  justify-self: center;
+}
+
+.MarsWeatherPage {
+  padding: 10vh 6vh 10vh 6vh;
+  display: grid;
+  grid-template-columns: 44vw 44vw;
+  grid-template-rows: 30vh 20vh 30vh;
+  grid-template-areas: 
+    "infoCon lastDay"
+    ". ."
+    "weatherCon weatherCon";
+}
+
+/* information div */
+.MarsWeatherInfo {
+  background-color: rgba(218, 54, 25, 0.582);
+  width: 30vw;
+}
+
+/* Weather card container & card */
 .weatherCard {
   display: inline-block !important;
   margin-right: 2vw;
@@ -7,10 +45,11 @@
 .weatherCardTop {
   width: 12vw;
   height: 12vw;
-  background-image: url('../Images/mars1.jpg');
-  background-repeat: no-repeat;
+  background-color: rgba(218, 54, 25, 0.582);
+  /* background-image: url('../Images/mars1.jpg'); */
+  /* background-repeat: no-repeat; */
   /* background-attachment: fixed; */
-  background-position: center;
+  /* background-position: center; */
 }
 
 .weatherCardBottom {
@@ -18,6 +57,9 @@
   height: 12vw;
 }
 
+
+/* last day card */
 .latestDayCard {
   text-align: center;
+  color: black;
 }

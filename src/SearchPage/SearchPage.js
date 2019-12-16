@@ -24,14 +24,14 @@ class SearchPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <div>
-            <p>Search anything you want to see from the NASA library</p>
-          </div>
-          <form id="searchForm" onSubmit={this.handleFormSubmitted}>
-            <input type="text" name="searchInput" placeholder="Type your search keyword..." value={this.props.searchKeyword} onChange={this.handleKeywordOnchange} />
-            <input type="submit" />
+      <div className="SearchPage">
+        <div className="searchFormContinaer">
+          <p>Search anything you want to see from the NASA library</p>
+          <form id="searchForm" className="ui form searchForm" onSubmit={this.handleFormSubmitted}>
+            <div className="field">
+              <input type="text" name="searchInput" placeholder="Type your search keyword..." value={this.props.searchKeyword} onChange={this.handleKeywordOnchange} />
+            </div>
+            <input className="ui button" type="submit" value="search"/>
           </form>
         </div>
         <MediaContainer media={this.props.media}/>

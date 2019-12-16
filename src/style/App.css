@@ -2,6 +2,8 @@
 
 body {
   font-family: 'Montserrat', sans-serif !important;
+  background-color: rgba(19, 16, 16, 0.959) !important;
+  color: white !important;
 }
 
 #navbar {
@@ -10,6 +12,11 @@ body {
 }
 
 #websitetitle {
+  color: white;
   font-weight: 700;
   font-size: 2.6vh;
+}
+
+.item.navmenu {
+  color: white !important;
 }

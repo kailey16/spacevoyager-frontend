@@ -10,11 +10,11 @@ const Navbar = (props) => {
         SpaceVoyager
       </Link>
       <div className="right menu">
-        <Link className="item" to="/marsrover">Mars Rover</Link>
-        <Link className="item" to="/searchpage">NASAlib</Link>
-        <Link className="item" to="/marsweather">Mars weather</Link>
-        <Link className="item" to="/profile">Profile</Link>
-        {props.currentUser.username ? <Link className="item" onClick={props.logOut} to="/">Logout</Link> : <Link className="item" to="/login">Login</Link>}
+        <Link className="item navmenu" to="/marsrover">Mars Rover</Link>
+        <Link className="item navmenu" to="/searchpage">NASAlib</Link>
+        <Link className="item navmenu" to="/marsweather">Mars weather</Link>
+        <Link className="item navmenu" to="/profile">Profile</Link>
+        {props.currentUser.username ? <Link className="item navmenu" onClick={props.logOut} to="/">Logout</Link> : <Link className="item navmenu" to="/login">Login</Link>}
       </div>
     </div>
   )
