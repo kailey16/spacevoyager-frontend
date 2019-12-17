@@ -62,3 +62,7 @@
 #libSaveButton {
   margin-top: 2vh;
 }
+
+#modalCloseButton {
+  float: right;
+}

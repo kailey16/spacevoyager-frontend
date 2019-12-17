@@ -1,3 +1,5 @@
+import { trackPromise } from 'react-promise-tracker'
+
 ///// Mars Rover page actions 
 // initial fetch to display
 function fetchedRoverPhotos(photos) {
@@ -6,9 +8,11 @@ function fetchedRoverPhotos(photos) {
 
 export function fetchingRoverPhotos() {
   return (dispatch) => {
-    fetch("http://localhost:3001/marsrover")
-    .then(resp => resp.json())
-    .then(photos => dispatch(fetchedRoverPhotos(photos)))
+    trackPromise(
+      fetch("http://localhost:3001/marsrover")
+      .then(resp => resp.json())
+      .then(photos => dispatch(fetchedRoverPhotos(photos)))
+    )
   } 
 }
 
@@ -22,9 +26,11 @@ function fetchedWeatherInfo(info) {
 
 export function fetchingWeatherInfo() {
   return (dispatch) => {
-    fetch("http://localhost:3001/marsweather")
-    .then(resp => resp.json())
-    .then(info => dispatch(fetchedWeatherInfo(info)))
+    trackPromise(
+      fetch("http://localhost:3001/marsweather")
+      .then(resp => resp.json())
+      .then(info => dispatch(fetchedWeatherInfo(info)))
+    )
   } 
 }
 
@@ -38,9 +44,11 @@ function fetchedMedia(media) {
 
 export function fetchingMedia() { 
   return (dispatch) => {
-    fetch("http://localhost:3001/nasalibrary")
-    .then(resp => resp.json())
-    .then(media => dispatch(fetchedMedia(media)))
+    trackPromise(
+      fetch("http://localhost:3001/nasalibrary")
+      .then(resp => resp.json())
+      .then(media => dispatch(fetchedMedia(media)))
+    )
   } 
 }
 
@@ -56,16 +64,18 @@ function fetchedWithKeyword(media) {
 
 export function fetchingWithKeyword(keyword) {
   return (dispatch) => {
-    fetch("http://localhost:3001/searchwithkeyword", {
+    trackPromise(
+      fetch("http://localhost:3001/searchwithkeyword", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       body: JSON.stringify({keyword})
-    })
-    .then(resp => resp.json())
-    .then(media => dispatch(fetchedWithKeyword(media)))
+      })
+      .then(resp => resp.json())
+      .then(media => dispatch(fetchedWithKeyword(media)))
+    )
   }
 }
 

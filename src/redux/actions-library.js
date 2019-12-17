@@ -44,12 +44,12 @@ export function createLibrary(libInfo) {
 
 // save item under library
 function createdItem(item) {
-  return {type: "ADD_LIBRARY", payload: item}
+  return {type: "ADD_ITEM", payload: item}
 }
 
 export function saveImgToLibrary(lib, img) {
   return dispatch => {
-    fetch("http://localhost:3001/items", {
+    fetch("http://localhost:3001/save_items", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',

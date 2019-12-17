@@ -23,13 +23,13 @@ class Img extends React.Component {
         <img className="roverImg" src={this.props.photo["img_src"]} alt="roverImg" onClick={() => this.props.bigImageShow(this.props.photo["img_src"])} />
         <button id="saveToLibButton" className="ui button" onClick={this.openModal}>Save To My Library</button>
         
-      <div id={`libListModal-${this.props.photo.id}`} class="ui mini modal">
-        <i class="close icon" onClick={this.closeModal}></i>
-        <div class="header">
-          My Libraries
+    {/* modal */}
+      <div id={`libListModal-${this.props.photo.id}`} className="ui mini modal">
+        <div className="header">
+          My Libraries <i id="modalCloseButton" className="close icon" onClick={this.closeModal}></i>
         </div>
-        <div class="content">
-          {this.props.myLibraries.map(lib => <div className="modalLibTitle" onClick={() => saveImgUnderLib(lib)}>{lib.title}</div>)}
+        <div className="content">
+          {this.props.myLibraries.map(lib => <div key={lib.id} className="modalLibTitle" onClick={() => this.saveImgUnderLib(lib)}>{lib.title}</div>)}
         </div>
       </div>
 
@@ -46,4 +46,4 @@ const mapDispatchToProps = (dispatch) => {
   return {saveImgToLibrary: (lib, img) => dispatch(saveImgToLibrary(lib, img))}
 }
 
-export default connect(mapStateToProps)(Img)
+export default connect(mapStateToProps, mapDispatchToProps)(Img)

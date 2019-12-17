@@ -7,6 +7,7 @@ import LatestDayCard from './LatestDayCard'
 import '../style/MarsWeather.css'
 import MarsWeatherInfo from './MarsWeatherInfo'
 
+
 class MarsWeather extends React.Component {
 
   componentDidMount() {

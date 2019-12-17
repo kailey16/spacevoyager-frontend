@@ -71,13 +71,23 @@ const myLibraryReducer = (state = [], action) => {
   }
 }
 
+const myItemReducer = (state = [], action) => {
+  switch(action.type) {
+    case "ADD_ITEM":
+      return [...state, action.payload]
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
   roverPhotos: roverReducer,
   searchMedia: searchReducer,
   searchKeyword: searchKeywordReducer,
   marsWeather: marsWeatherReducer,
   currentUser: currentUserReducer,
-  myLibraries: myLibraryReducer
+  myLibraries: myLibraryReducer,
+  myItems: myItemReducer
 })
 
 

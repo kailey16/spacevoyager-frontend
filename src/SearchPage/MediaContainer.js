@@ -1,6 +1,8 @@
 import React from "react";
 import Media from './Media'  
 import BigImagePage from '../MarsRover/BigImagePage'
+import { LoadingSpinnerComponent } from '../LoadingPage'
+
 
 class MediaContainer extends React.Component {
 
@@ -21,6 +23,7 @@ class MediaContainer extends React.Component {
         : <div className="MediaContainer">
         {this.props.media.map(m => <Media key={m.href} media={m} bigImageShow={this.bigImageShow} />)}
         </div>}
+        <LoadingSpinnerComponent />
       </div>
     )
   }

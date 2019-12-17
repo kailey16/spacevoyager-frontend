@@ -1,6 +1,7 @@
 import React from "react";
 import Img from './Img'
 import BigImagePage from './BigImagePage'
+import { LoadingSpinnerComponent } from '../LoadingPage'
 
 
 class ImgContainer extends React.Component {
@@ -19,6 +20,7 @@ class ImgContainer extends React.Component {
         {this.state.bigImage ?
         <BigImagePage showImgUrl={this.state.showImgUrl} bigImageShow={this.bigImageShow} />
         : <div className="ImgContainer">{this.props.photos.map(photo => <Img key={photo.id} photo={photo} bigImageShow={this.bigImageShow}/>)}</div>}
+        <LoadingSpinnerComponent />
       </div>
     )
   }

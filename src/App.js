@@ -12,7 +12,7 @@ import LoginPage from './LoginSignup/LoginPage'
 import './style/App.css'
 import { getCurrentUser } from './redux/actions'
 import { fetchingMyLibraries } from './redux/actions-library'
- 
+
 
 class App extends React.Component {
 
@@ -31,7 +31,6 @@ class App extends React.Component {
         <Route exact path='/marsweather' component={MarsWeather} />
         <Route exact path='/profile' component={Profile} />
         <Route exact path='/library/:id' component={LibraryPage} />
-        {}
         <Route exact path='/login' component={LoginPage} />
       </div>
     )
