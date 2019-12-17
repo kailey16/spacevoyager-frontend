@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from 'react-redux';
+import { createLibrary } from '../redux/actions-library'
 
 class NewLibraryForm extends React.Component {
 
@@ -13,24 +15,24 @@ class NewLibraryForm extends React.Component {
 
   handleSubmitForm = (e) => {
     e.preventDefault()
-    console.log("submitting form")
+    this.props.createLibrary(this.state)
     this.setState({libraryName: "", libraryDescription: ""})
   }
 
   render() {
     return (
-      <div>
+      <div className="NewLibraryForm">
         <div>Create new library</div>
-        <form id="libraryForm" class="ui form" onSubmit={this.handleSubmitForm}>
-          <div class="field">
+        <form id="libraryForm" className="ui form" onSubmit={this.handleSubmitForm}>
+          <div className="field">
             <label>Library Name</label>
             <input type="text" name="libraryName" placeholder="Library Name" onChange={this.handleOnChange} value={this.state.libraryName} />
           </div>
-          <div class="field">
+          <div className="field">
             <label>Description</label>
             <textarea rows="2" placeholder="Description..." name="libraryDescription" onChange={this.handleOnChange} value={this.state.libraryDescription} />
           </div>
-          <button class="ui button" type="submit">Submit</button>
+          <button className="ui button" type="submit">Submit</button>
         </form>
       </div>
     )
@@ -38,4 +40,10 @@ class NewLibraryForm extends React.Component {
 
 }
 
-export default NewLibraryForm
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createLibrary: (libInfo) => dispatch(createLibrary(libInfo))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(NewLibraryForm)

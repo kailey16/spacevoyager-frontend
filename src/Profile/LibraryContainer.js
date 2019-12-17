@@ -1,13 +1,21 @@
 import React from "react";
-// import LibraryCard from './LibraryCard'
+import { connect } from 'react-redux';
+import LibraryCard from './LibraryCard'
 
-const LibraryContainer = () => {
-  return (
-    <div className="LibraryContainer">
-      LibraryContainer
-      {/* <LibraryCard /> */}
-    </div>
-  )
+class LibraryContainer extends React.Component {
+
+  render() {
+    return (
+      <div className="LibraryContainer">
+        {this.props.myLibraries.map(lib => <LibraryCard lib={lib} />)}
+      </div>
+    )
+  }
+
 }
 
-export default LibraryContainer
+const mapStateToProps = (state) => {
+  return {myLibraries: state.myLibraries}
+}
+
+export default connect(mapStateToProps)(LibraryContainer)

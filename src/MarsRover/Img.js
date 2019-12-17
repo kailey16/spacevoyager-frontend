@@ -1,12 +1,49 @@
 import React from "react";
+import { connect } from 'react-redux';
+import { saveImgToLibrary } from '../redux/actions-library'
 
-const Img = (props) => {
-  return ( 
-    <div className="roverImgCard">
-      <img className="roverImg" src={props.photo["img_src"]} alt="roverImg" onClick={() => props.bigImageShow(props.photo["img_src"])} />
-      <button id="saveToLibButton" className="ui button">Save To My Library</button>
-    </div>
-  )
+class Img extends React.Component {
+
+  openModal = () => {
+    document.querySelector(`#libListModal-${this.props.photo.id}`).classList.add("active")
+  }
+
+  closeModal = () => {
+    document.querySelector(`#libListModal-${this.props.photo.id}`).classList.remove("active")
+  }
+
+  saveImgUnderLib = (lib) => {
+    let img = this.props.photo
+    this.props.saveImgToLibrary(lib, img)
+  }
+
+  render() {
+    return ( 
+      <div className="roverImgCard">
+        <img className="roverImg" src={this.props.photo["img_src"]} alt="roverImg" onClick={() => this.props.bigImageShow(this.props.photo["img_src"])} />
+        <button id="saveToLibButton" className="ui button" onClick={this.openModal}>Save To My Library</button>
+        
+      <div id={`libListModal-${this.props.photo.id}`} class="ui mini modal">
+        <i class="close icon" onClick={this.closeModal}></i>
+        <div class="header">
+          My Libraries
+        </div>
+        <div class="content">
+          {this.props.myLibraries.map(lib => <div className="modalLibTitle" onClick={() => saveImgUnderLib(lib)}>{lib.title}</div>)}
+        </div>
+      </div>
+
+      </div>
+    )
+  }
 }
 
-export default Img
+const mapStateToProps = (state) => {
+  return {myLibraries: state.myLibraries}
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {saveImgToLibrary: (lib, img) => dispatch(saveImgToLibrary(lib, img))}
+}
+
+export default connect(mapStateToProps)(Img)

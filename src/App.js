@@ -11,12 +11,14 @@ import LibraryPage from './Profile/LibraryPage'
 import LoginPage from './LoginSignup/LoginPage'
 import './style/App.css'
 import { getCurrentUser } from './redux/actions'
+import { fetchingMyLibraries } from './redux/actions-library'
  
 
 class App extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
+    this.props.fetchingMyLibraries()
   }
 
   render() {
@@ -38,7 +40,8 @@ class App extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getCurrentUser: () => dispatch(getCurrentUser())
+    getCurrentUser: () => dispatch(getCurrentUser()),
+    fetchingMyLibraries: () => dispatch(fetchingMyLibraries())
   }
 }
 

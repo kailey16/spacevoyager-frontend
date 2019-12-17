@@ -1,9 +1,12 @@
 import React from "react";
 
-const LibraryCard = () => {
+const LibraryCard = (props) => {
+  const {title, description} = props.lib
   return (
-    <div>
-      LibraryCard
+    <div className="LibraryCard">
+      <i id="libraryIcon" class="rocket icon"></i>
+      <p>{title}</p>
+      <p>{description}</p>
     </div>
   )
 }

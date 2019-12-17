@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'; 
+import { combineReducers } from 'redux';  
 
 ///// MarsRovers page
 // photos array
@@ -10,6 +10,7 @@ const roverReducer = (state = [], action) => {
       return state
   }
 }  
+
 
 ///// SearchPage
 // media array
@@ -34,6 +35,7 @@ const searchKeywordReducer = (state = "", action) => {
   }
 }
 
+
 ///// Mars weather page
 // fetching info
 const marsWeatherReducer = (state = {}, action) => {
@@ -45,6 +47,7 @@ const marsWeatherReducer = (state = {}, action) => {
   }
 }
 
+
 ///// Current user page
 const currentUserReducer = (state={}, action) => {
   switch(action.type) {
@@ -55,12 +58,26 @@ const currentUserReducer = (state={}, action) => {
   }
 }
 
+
+///// libraries
+const myLibraryReducer = (state = [], action) => {
+  switch(action.type) {
+    case "FETCHED_MY_LIBRARIES":
+      return action.payload
+    case "ADD_LIBRARY":
+      return [...state, action.payload]
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
   roverPhotos: roverReducer,
   searchMedia: searchReducer,
   searchKeyword: searchKeywordReducer,
   marsWeather: marsWeatherReducer,
-  currentUser: currentUserReducer
+  currentUser: currentUserReducer,
+  myLibraries: myLibraryReducer
 })
 
 

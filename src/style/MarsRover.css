@@ -67,3 +67,7 @@
 #backToGalleryButton {
   margin-bottom: 3vh;
 }
+
+.ui.mini.modal {
+  color: black !important;
+}
