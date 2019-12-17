@@ -12,7 +12,7 @@ class SearchPage extends React.Component {
     this.props.fetchingMedia()
   }
 
-  handleFormSubmitted = (e) => {
+  handleFormSubmitted = (e) => { 
     e.preventDefault();
     this.props.fetchingWithKeyword(this.props.searchKeyword)
     this.props.searchKeywordChange("")

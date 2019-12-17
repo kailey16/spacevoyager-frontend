@@ -73,6 +73,8 @@ const myLibraryReducer = (state = [], action) => {
 
 const myItemReducer = (state = [], action) => {
   switch(action.type) {
+    case "FETCHED_MY_ITEMS":
+      return action.payload
     case "ADD_ITEM":
       return [...state, action.payload]
     default:

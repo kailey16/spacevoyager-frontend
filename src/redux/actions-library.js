@@ -7,10 +7,7 @@ function fetchedMyLibraries(libs) {
 export function fetchingMyLibraries() {
   return (dispatch) => {
     fetch("http://localhost:3001/mylibraries", {
-      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
         'Authorization' : `Bearer ${localStorage.getItem('jwt')}`
       }})
     .then(resp => resp.json())
