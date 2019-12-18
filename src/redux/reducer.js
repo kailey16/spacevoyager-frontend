@@ -66,6 +66,9 @@ const myLibraryReducer = (state = [], action) => {
       return action.payload
     case "ADD_LIBRARY":
       return [...state, action.payload]
+    case "DELETE_LIBRARY":
+      let newLibsArray = state.filter(lib => lib.id !== action.payload.id)
+      return newLibsArray
     default:
       return state
   }

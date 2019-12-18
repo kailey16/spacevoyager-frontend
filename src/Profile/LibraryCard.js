@@ -1,19 +1,34 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { deleteLibrary } from '../redux/actions-library'
 
 
-const LibraryCard = (props) => {
+class LibraryCard extends React.Component {
 
-  return (
-    <div className="LibraryCard">
-      <Link to={`/library/${props.lib.id}`}>
-        <i id="libraryIcon" class="rocket icon"></i>
-      </Link>
-      <p>{props.lib.title}</p>
-      <p>{props.lib.description}</p>
-    </div>
-  )
+  deleteLibrary = () => {
+    this.props.deleteLibrary(this.props.lib.id)
+  }
+
+  render() {
+    return (
+      <div className="LibraryCard">
+        <i id="libraryDeleteButton" className="close icon" onClick={this.deleteLibrary}></i>
+        <Link to={`/library/${this.props.lib.id}`}>
+          <i id="libraryIcon" className="rocket icon"></i>
+        </Link>
+        <p>{this.props.lib.title}</p>
+        <p>{this.props.lib.description}</p>
+      </div>
+    )
+  }
 
 }
 
-export default LibraryCard
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteLibrary: (libId) => dispatch(deleteLibrary(libId))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(LibraryCard)

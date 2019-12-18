@@ -39,26 +39,22 @@ export function createLibrary(libInfo) {
   } 
 }
 
-// save item under library
-function createdItem(item) {
-  return {type: "ADD_ITEM", payload: item}
+
+// library delete
+function myLibraryDeleted(lib) {
+  return {type: "DELETE_LIBRARY", payload: lib}
 }
 
-export function saveImgToLibrary(lib, img) {
-  return dispatch => {
-    fetch("http://localhost:3001/save_items", {
-      method: "POST",
+export function deleteLibrary(libId) {
+  return (dispatch) => {
+    fetch(`http://localhost:3001/libraries/${libId}`, {
+      method: "DELETE",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
         'Authorization' : `Bearer ${localStorage.getItem('jwt')}`
-      },
-      body: JSON.stringify({
-        library: lib,
-        image: img
-      })
+      }
     })
     .then(resp => resp.json())
-    .then(item => dispatch(createdItem(item)))
-  }
+    .then(lib => dispatch(myLibraryDeleted(lib)))
+  } 
 }
+

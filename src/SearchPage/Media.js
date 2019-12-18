@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { saveImgToLibrary } from '../redux/actions-library'
+import { saveImgToLibrary } from '../redux/actions-item'
 
 
 class Media extends React.Component {

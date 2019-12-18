@@ -7,7 +7,7 @@ class LibraryContainer extends React.Component {
   render() {
     return (
       <div className="LibraryContainer">
-        {this.props.myLibraries.map(lib => <LibraryCard lib={lib} />)}
+        {this.props.myLibraries.map(lib => <LibraryCard key={lib.id} lib={lib} />)}
       </div>
     )
   }
