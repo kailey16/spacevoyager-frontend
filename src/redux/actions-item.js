@@ -12,7 +12,7 @@ export function fetchingMyItems() {
     .then(resp => resp.json())
     .then(items => {
       dispatch(fetchedMyItems(items))})
-  } 
+  }
 }  
 
 
@@ -42,25 +42,30 @@ export function saveImgToLibrary(lib, img) {
 
 
 // delete item from the library
-// function deletedItem(item) {
-//   return {type: "DELETE_ITEM", payload: item}
-// }
+function deletedItem(item) {
+  return {type: "DELETE_ITEM", payload: item}
+}
 
-// export function deleteItemFromLib(lib, img) {
-//   return dispatch => {
-//     fetch("http://localhost:3001/save_items", {
-//       method: "DELETE",
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json',
-//         'Authorization' : `Bearer ${localStorage.getItem('jwt')}`
-//       },
-//       body: JSON.stringify({
-//         library: lib,
-//         image: img
-//       })
-//     })
-//     .then(resp => resp.json())
-//     .then(item => dispatch(deletedItem(item)))
-//   }
-// }
+export function deleteItemFromLib(libId, itemId) {
+  return dispatch => {
+    fetch("http://localhost:3001/delitemfromlib", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization' : `Bearer ${localStorage.getItem('jwt')}`
+      },
+      body: JSON.stringify({
+        libId: libId,
+        itemId: itemId
+      })
+    })
+    .then(resp => resp.json())
+    .then(item => dispatch(deletedItem(item)))
+  }
+}
+
+
+export function emptyMyitemList() {
+  return {type: "EMPTY_ITEM_LIST"}
+}

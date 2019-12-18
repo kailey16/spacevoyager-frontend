@@ -5,6 +5,7 @@ import '../style/Profile.css'
 import { connect } from 'react-redux';
 import NewLibraryForm from './NewLibraryForm'
 
+
 class Profile extends React.Component {
 
   render() {
@@ -22,5 +23,6 @@ class Profile extends React.Component {
 const mapStateToProps = (state) => {
   return {currentUser: state.currentUser}
 }
+
 
 export default connect(mapStateToProps)(Profile)

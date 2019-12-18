@@ -58,3 +58,8 @@ export function deleteLibrary(libId) {
   } 
 }
 
+
+export function emptyLibraryList() {
+  return {type: "EMPTY_LIBRARY_LIST"}
+}
+

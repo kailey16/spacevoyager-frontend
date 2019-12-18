@@ -52,7 +52,7 @@ const marsWeatherReducer = (state = {}, action) => {
 const currentUserReducer = (state={}, action) => {
   switch(action.type) {
     case "SET_CURRENT_USER":
-      return action.payload
+      return action.payload ? action.payload : state
     default:
       return state
   }
@@ -69,6 +69,8 @@ const myLibraryReducer = (state = [], action) => {
     case "DELETE_LIBRARY":
       let newLibsArray = state.filter(lib => lib.id !== action.payload.id)
       return newLibsArray
+    case "EMPTY_LIBRARY_LIST":
+      return []
     default:
       return state
   }
@@ -80,6 +82,11 @@ const myItemReducer = (state = [], action) => {
       return action.payload
     case "ADD_ITEM":
       return [...state, action.payload]
+    case "DELETE_ITEM":
+      const newItemsArr = state.filter(item => item.id !== action.payload.id)
+      return newItemsArr
+    case "EMPTY_ITEM_LIST":
+      return []
     default:
       return state
   }

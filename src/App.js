@@ -11,16 +11,16 @@ import LibraryPage from './LibraryPage/LibraryPage'
 import LoginPage from './LoginSignup/LoginPage'
 import './style/App.css'
 import { getCurrentUser } from './redux/actions'
-import { fetchingMyLibraries } from './redux/actions-library'
-import { fetchingMyItems } from './redux/actions-item'
+// import { fetchingMyLibraries } from './redux/actions-library'
+// import { fetchingMyItems } from './redux/actions-item'
 
 
 class App extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
-    this.props.fetchingMyLibraries()
-    this.props.fetchingMyItems()
+    // this.props.fetchingMyLibraries()
+    // this.props.fetchingMyItems()
   }
 
   render() {
@@ -41,9 +41,9 @@ class App extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getCurrentUser: () => dispatch(getCurrentUser()),
-    fetchingMyLibraries: () => dispatch(fetchingMyLibraries()),
-    fetchingMyItems: () => dispatch(fetchingMyItems())
+    getCurrentUser: () => dispatch(getCurrentUser())
+    // fetchingMyLibraries: () => dispatch(fetchingMyLibraries()),
+    // fetchingMyItems: () => dispatch(fetchingMyItems())
   }
 }
 

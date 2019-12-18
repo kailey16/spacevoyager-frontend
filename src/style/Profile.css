@@ -32,6 +32,10 @@
   transform: scaleX(-1);
 }
 
+#libraryDeleteButton {
+  float: right;
+}
+
 
 /* library form */
 .NewLibraryForm {

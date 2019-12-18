@@ -9,7 +9,7 @@ export const LoadingSpinnerComponent = (props) => {
     {(promiseInProgress === true) ?
       <div>
         <h3>Loading</h3>
-        <div class="ui active centered inline huge loader"></div>
+        <div className="ui active centered inline huge loader"></div>
       </div>
       :
         null}

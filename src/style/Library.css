@@ -1,3 +1,16 @@
-#libraryDeleteButton {
-  float: right;
+.LibraryPage {
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.libTitle {
+  font-size: 3vh;
+}
+
+.libText {
+  font-size: 2.5vh;
+} 
+
+#deleteItemFromLib {
+  margin-top: 2vh;
 }

@@ -1,27 +1,36 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import '../style/Library.css'
 import MyItem from './MyItem'
 import { deleteLibrary } from '../redux/actions-library'
+import Swal from 'sweetalert2'
 
 
 class LibraryPage extends React.Component {
 
-  deleteLibrary = () => {
-    this.props.deleteLibrary(this.props.lib.id)
+  deleteLibrary = () =>{
+    this.props.deleteLibrary(this.props.libObj.id)
+    Swal.fire({
+      icon: 'success',
+      text: `${this.props.libObj.title} is successfully deleted!`,
+    })
   }
 
   render() {
     return (
-      <div>
+      <div className="LibraryPage">
         {this.props.libObj ? (
         <div>
-          <p>{this.props.libObj.title}</p>
-          <p>{this.props.libObj.description}</p>
-          <div className="ui button" onClick={this.deleteLibrary}>Delete Library</div>
-          <div className="itemContainer">
-            {this.props.itemsOfLib.map(item => <MyItem key={item.id} item={item}/>)}
+          <p className="libTitle">{this.props.libObj.title}</p>
+          <p className="libText">{this.props.libObj.description}</p>
+
+          <Link to={`/profile`}>
+            <div className="ui button" onClick={this.deleteLibrary}>Delete Library</div>
+          </Link>
+          
+          <div className="MediaContainer">
+            {this.props.itemsOfLib.map((item, i) => <MyItem key={i} item={item} libId={this.props.libObj.id}/>)}
           </div>
         </div>)
         : null}
@@ -35,7 +44,7 @@ const mapStateToProps = (state, ownProps) => {
   const libId = ownProps.match.params.id
 
   return {
-    itemsOfLib: state.myItems.filter(item => state.myItems[0].library_id.toString() === libId),
+    itemsOfLib: state.myItems,
     libObj: state.myLibraries.find(lib => lib.id.toString() === libId)
   }
 }
