@@ -22,9 +22,9 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="LoginPageFormCon">
       <p>Sign up for SpaceVoyager</p>
-      <form className="ui form" onSubmit={this.handleOnsubmit}>
+      <form className="ui form LoginPageForm" onSubmit={this.handleOnsubmit}>
         <div className="field">
           <label>Username</label>
           <input type="text" name="username" placeholder="Username" onChange={this.inputOnchange} value={this.state.username} />

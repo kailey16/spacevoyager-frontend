@@ -1,8 +1,6 @@
- // save item under library
-function createdItem(item) {
-  return {type: "ADD_ITEM", payload: item}
-}
+import Swal from 'sweetalert2'
 
+// save item under library
 export function saveImgToLibrary(lib, img) {
   return dispatch => {
     fetch("http://localhost:3001/save_items", {
@@ -16,18 +14,20 @@ export function saveImgToLibrary(lib, img) {
         library: lib,
         image: img
       })
-    })
+    }) 
     .then(resp => resp.json())
-    .then(item => dispatch(createdItem(item)))
+    .then(item => {
+      console.log(item)
+      Swal.fire({
+        icon: 'success',
+        text: `Successfully saved`
+      })
+    })
   }
 }
 
 
 // delete item from the library
-function deletedItem(item) {
-  return {type: "DELETE_ITEM", payload: item}
-}
-
 export function deleteItemFromLib(libId, itemId) {
   return dispatch => {
     fetch("http://localhost:3001/delitemfromlib", {
@@ -43,6 +43,12 @@ export function deleteItemFromLib(libId, itemId) {
       })
     })
     .then(resp => resp.json())
-    .then(item => dispatch(deletedItem(item)))
+    .then(item => {
+      console.log(item)
+      Swal.fire({
+        icon: 'success',
+        text: 'Successfully deleted from library!'
+      })
+    })
   }
 }

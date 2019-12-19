@@ -42,21 +42,72 @@
   text-align: center;
 }
 
+
+/* weather card top */
 .weatherCardTop {
   width: 12vw;
   height: 12vw;
-  background-color: rgba(218, 54, 25, 0.582);
-  /* background-image: url('../Images/mars1.jpg'); */
+  display: block;
+  position: relative;
+
+  /* background-image: url('../Images/space6.jpg'); */
   /* background-repeat: no-repeat; */
   /* background-attachment: fixed; */
   /* background-position: center; */
 }
 
+.weatherCardTop::after {
+  content: "";
+  background: url('../Images/space6.jpg');
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.weatherCardSol {
+  font-size: 1.5vw;
+  padding-top: 3vh;
+  font-weight: 600;
+}
+
+.weatherCardContent {
+  font-size: 1.2vw;
+  font-weight: 500;
+}
+
+/* weather card bottom */
 .weatherCardBottom {
   width: 12vw;
   height: 12vw;
 }
 
+.weatherDate {
+  font-size: 1.2vw;
+  margin: 0;
+  padding-top: 2vh;
+  font-weight: 600;
+
+}
+
+.weathrSeason {
+  font-size: 1.2vw;
+  margin: 0 0 1vh 0;
+  font-weight: 500;
+}
+
+#thermoIcon {
+  margin: 0.8vh 0 0.5vh 0;
+  font-size: 1.7vw;
+}
+
+.weathrTemp {
+  margin: 0;
+  font-size: 1.2vw;
+}
 
 /* last day card */
 .latestDayCard {

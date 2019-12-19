@@ -1,6 +1,8 @@
 import React from "react";
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
+import '../style/LoginPage.css'
+
 
 class LoginPage extends React.Component {
   state = {
@@ -13,7 +15,7 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="LoginPage">
         {this.state.signup ? <SignupForm formSwitch={this.formSwitch} /> : <LoginForm formSwitch={this.formSwitch} />}
       </div>
     )

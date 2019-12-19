@@ -27,7 +27,7 @@
   background-color: #93291E;
   color: white;
   font-weight: 500;
-}
+} 
 
 .ImgContainer {
   margin: 0 10vw 0 10vw;
@@ -42,7 +42,7 @@
 }
 
 .roverImgCard {
-  background-color: rgba(63, 60, 60, 0.979);
+  background-color: #333333;
 }
 
 #saveToLibButton {

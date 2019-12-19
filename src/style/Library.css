@@ -14,3 +14,19 @@
 #deleteItemFromLib {
   margin-top: 2vh;
 }
+
+#libDeleteButton {
+  float: right;
+  margin-right: 10vw;
+}
+
+.LibMediaContainer {
+  margin: 10vh 10vw 0 10vw;
+  display: grid;
+  grid-template-columns: 25vw 25vw 25vw;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "card card card";
+  grid-column-gap: 2.5vw;
+  grid-row-gap: 2.5vw;
+}

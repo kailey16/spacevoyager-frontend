@@ -1,4 +1,3 @@
-///// library and item actions
 // get my library list
 function fetchedMyLibraries(libs) {
   return {type: "FETCHED_MY_LIBRARIES", payload: libs}

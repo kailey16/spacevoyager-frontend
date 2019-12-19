@@ -6,7 +6,7 @@ import { fetchingWeatherInfo } from '../redux/actions'
 import LatestDayCard from './LatestDayCard'
 import '../style/MarsWeather.css'
 import MarsWeatherInfo from './MarsWeatherInfo'
-
+ 
 
 class MarsWeather extends React.Component {
 
@@ -25,7 +25,7 @@ class MarsWeather extends React.Component {
         <WeatherContainer info={this.props.info} />
       </div> 
     )
-  }
+  } 
 
 }
 

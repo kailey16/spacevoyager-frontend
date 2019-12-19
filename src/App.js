@@ -11,16 +11,12 @@ import LibraryPage from './LibraryPage/LibraryPage'
 import LoginPage from './LoginSignup/LoginPage'
 import './style/App.css'
 import { getCurrentUser } from './redux/actions'
-// import { fetchingMyLibraries } from './redux/actions-library'
-// import { fetchingMyItems } from './redux/actions-item'
 
 
 class App extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
-    // this.props.fetchingMyLibraries()
-    // this.props.fetchingMyItems()
   }
 
   render() {
@@ -33,18 +29,22 @@ class App extends React.Component {
         <Route exact path='/marsweather' component={MarsWeather} />
         <Route exact path='/profile' component={Profile} />
         <Route exact path='/library/:id' component={LibraryPage} />
-        <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/login' render={()=>{return this.props.currentUser.id ? <Profile /> : <LoginPage/>}} />
       </div>
     )
+  }
+}
+ 
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getCurrentUser: () => dispatch(getCurrentUser())
-    // fetchingMyLibraries: () => dispatch(fetchingMyLibraries()),
-    // fetchingMyItems: () => dispatch(fetchingMyItems())
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

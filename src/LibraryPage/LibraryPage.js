@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import '../style/Library.css'
 import MyItem from './MyItem'
 import { deleteLibrary } from '../redux/actions-library'
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2' 
 
 
 class LibraryPage extends React.Component {
@@ -24,6 +24,16 @@ class LibraryPage extends React.Component {
     }
   }
 
+  deleteItem = (itemId) => {
+    // const item = this.state.itemsOfLib.find(item => item.id === itemId)
+    // const index = this.state.itemsOfLib.indexOf(item)
+    // const newArr = [...this.state.itemsOfLib.slice(0,index), ...this.state.itemsOfLib.slice(index+1)]
+
+    const newArr = this.state.itemsOfLib.filter(item => item.id !== itemId)
+
+    this.setState({itemsOfLib: newArr})
+  }
+
   deleteLibrary = () =>{
     this.props.deleteLibrary(this.props.libObj.id)
     Swal.fire({
@@ -41,11 +51,11 @@ class LibraryPage extends React.Component {
           <p className="libText">{this.props.libObj.description}</p>
 
           <Link to={`/profile`}>
-            <div className="ui button" onClick={this.deleteLibrary}>Delete Library</div>
+            <div id="libDeleteButton" className="ui inverted red button" onClick={this.deleteLibrary}>Delete Library</div>
           </Link>
           
-          <div className="MediaContainer">
-            {this.state.itemsOfLib.map((item, i) => <MyItem key={i} item={item} libId={this.props.libObj.id}/>)}
+          <div className="LibMediaContainer">
+            {this.state.itemsOfLib.map((item, i) => <MyItem key={i} item={item} libId={this.props.libObj.id} deleteItem={this.deleteItem} />)}
           </div>
         </div>)
         : null}

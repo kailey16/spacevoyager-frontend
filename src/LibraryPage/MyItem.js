@@ -10,6 +10,13 @@ class MyItem extends React.Component {
   }
 
   componentDidMount(){
+    this.getMediaSrc()
+  }
+  // componentDidUpdate() {
+  //   this.getMediaSrc()
+  // }
+
+  getMediaSrc = () => {
     if (this.props.item.category === "nasalibrary") {
       fetch(`${this.props.item.media_url}`)
       .then(res => res.json())
@@ -27,10 +34,11 @@ class MyItem extends React.Component {
     }
   }
 
-  deleteItem = () => {
+  deleteItemClicked = () => {
     const libId = this.props.libId
     const itemId = this.props.item.id
     this.props.deleteItemFromLib(libId, itemId)
+    this.props.deleteItem(itemId)
   }
 
   render() {
@@ -48,7 +56,7 @@ class MyItem extends React.Component {
           </div>)
           }
           <div className="mediaDescription">{this.props.item.description}</div>
-          <button id="deleteItemFromLib" className="ui inverted grey button" onClick={this.deleteItem}>Delete from Library</button>
+          <button id="deleteItemFromLib" className="ui inverted grey button" onClick={this.deleteItemClicked}>Delete from Library</button>
         </div>
       </div>
     )

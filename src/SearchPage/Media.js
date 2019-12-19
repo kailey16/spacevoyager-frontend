@@ -1,6 +1,5 @@
 import React from "react";
-import { connect } from 'react-redux';
-import { saveImgToLibrary } from '../redux/actions-item'
+import LibraryModal from '../MarsRover/LibraryModal'
 
 
 class Media extends React.Component {
@@ -30,11 +29,6 @@ class Media extends React.Component {
     document.getElementById(this.modalId()).classList.remove("active")
   }
 
-  saveImgUnderLib = (lib) => {
-    let img = this.props.media
-    this.props.saveImgToLibrary(lib, img)
-  }
-
   modalId = () => {
     return `modal-${this.props.media["data"][0]["nasa_id"].replace(/\s/g,"")}`
   }
@@ -56,28 +50,12 @@ class Media extends React.Component {
         <button id="libSaveButton" className="ui inverted grey button" onClick={this.openModal}>Save To My Library</button>
         </div>
 
-      {/* modal */}
-        <div id={this.modalId()} className="ui mini modal">
-          <div className="header">
-            My Libraries <i id="modalCloseButton" className="close icon" onClick={this.closeModal}></i>
-          </div>
-          <div className="content">
-            {this.props.myLibraries.map(lib => <div key={lib.id} className="modalLibTitle" onClick={() => this.saveImgUnderLib(lib)}>{lib.title}</div>)}
-          </div>
-        </div>
-
+        <LibraryModal id={this.modalId()} closeModal={this.closeModal} photo={this.props.media}/>
       </div>
     )
   }
 
 }
 
-const mapStateToProps = (state) => {
-  return {myLibraries: state.myLibraries}
-}
 
-const mapDispatchToProps = (dispatch) => {
-  return {saveImgToLibrary: (lib, img) => dispatch(saveImgToLibrary(lib, img))}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Media)
+export default Media

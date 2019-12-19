@@ -1,0 +1,13 @@
+.LoginPage {
+  text-align: center;
+}
+
+.LoginPageFormCon {
+  width: 50vw;
+  margin-left: 25vw;
+}
+
+.LoginPageForm {
+  width: 25vw;
+  margin-left: 12.5vw;
+}

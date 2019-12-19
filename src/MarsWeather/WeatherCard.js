@@ -9,16 +9,16 @@ const WeatherCard = (props) => {
   return (
     <div className="ui fade reveal weatherCard">
       <div className="visible content weatherCardTop">
-        <p>SOL {props.sol}</p>
-        <p>{date.split(" ").slice(1,3).join(" ")}</p>
-        <p>{date.split(" ").slice(-1)}</p>
+        <p className="weatherCardSol">SOL {props.sol}</p>
+        <p className="weatherCardContent">{date.split(" ").slice(1,3).join(" ")}</p>
+        <p className="weatherCardContent">{date.split(" ").slice(-1)}</p>
       </div>
       <div className="hidden content weatherCardBottom">
-        <p>{date.split(" ").slice(0,1)}</p>
-        <p>{Season}</p>
-        <p>{Math.round(AT["mx"])}°C</p>
-        <i class="thermometer icon"></i>
-        <p>{Math.round(AT["mn"])}°C</p>
+        <p className="weatherDate">{date.split(" ").slice(0,1)}</p>
+        <p className="weathrSeason">{Season}</p>
+        <p className="weathrTemp">{Math.round(AT["mx"])}°C</p>
+        <i id="thermoIcon" className="thermometer icon"></i>
+        <p className="weathrTemp">{Math.round(AT["mn"])}°C</p>
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import { loginRequest } from '../redux/actions'
 
-
+ 
 class LoginForm extends React.Component {
 
   state = {
@@ -22,10 +22,10 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="LoginPageFormCon">
         <p>Welcome back to SpaceVoyager!</p>
         <p>Please sign into your account.</p>
-        <form className="ui form" onSubmit={this.handleOnsubmit}>
+        <form className="ui form LoginPageForm" onSubmit={this.handleOnsubmit}>
           <div className="field">
             <label>Username</label>
             <input type="text" name="username" placeholder="Username" onChange={this.inputOnchange} value={this.state.username} />
