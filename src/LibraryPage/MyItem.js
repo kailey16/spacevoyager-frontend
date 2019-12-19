@@ -9,9 +9,10 @@ class MyItem extends React.Component {
     media_url: ""
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getMediaSrc()
   }
+
   // componentDidUpdate() {
   //   this.getMediaSrc()
   // }

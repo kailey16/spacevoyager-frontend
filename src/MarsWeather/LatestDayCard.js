@@ -8,7 +8,7 @@ const LatestDayCard = (props) => {
     const date = new Date(First_UTC).toDateString()
 
     return (
-      <div className="ui card latestDayCard">
+      <div className="latestDayCard">
         <p>SOL {props.sol}</p>
         <p>{date.split(" ").slice(1,3).join(" ")}</p>
         <p>{date.split(" ").slice(-1)}</p>
@@ -19,7 +19,7 @@ const LatestDayCard = (props) => {
         <p>{Math.round(AT["mn"])}°C</p>
       </div>
     )
-  } else return <div></div>
+  } else {return <div></div>}
 }
 
 export default LatestDayCard
