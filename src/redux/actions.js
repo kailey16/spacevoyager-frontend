@@ -1,6 +1,6 @@
 import { trackPromise } from 'react-promise-tracker'
 import { fetchingMyLibraries, emptyLibraryList } from './actions-library'
-import { fetchingMyItems, emptyMyitemList } from './actions-item'
+
 
 ///// Mars Rover page actions 
 // initial fetch to display
@@ -110,7 +110,6 @@ export function loginRequest(loginInfo) {
         localStorage.setItem("jwt", data.jwt)
         dispatch(setCurrentUser(data.user))
         dispatch(fetchingMyLibraries())
-        dispatch(fetchingMyItems())
       } else {alert(`${data.message}`)}
     })
   }
@@ -139,7 +138,6 @@ export function signupRequest(signupInfo) {
         localStorage.setItem("jwt", data.jwt)
         dispatch(setCurrentUser(data.user))
         dispatch(fetchingMyLibraries())
-        dispatch(fetchingMyItems())
       } else {alert(`${data.error.join(", ")}`)}
     })
     .catch(error => alert(`${error.message}`))
@@ -159,7 +157,6 @@ export function getCurrentUser() {
       .then(data => {
         dispatch(setCurrentUser(data.user))
         dispatch(fetchingMyLibraries())
-        dispatch(fetchingMyItems())
       })
     }
   }
@@ -171,6 +168,5 @@ export function logOut() {
     localStorage.removeItem('jwt')
     dispatch(setCurrentUser({}))
     dispatch(emptyLibraryList())
-    dispatch(emptyMyitemList())
   }
 }

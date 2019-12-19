@@ -76,21 +76,6 @@ const myLibraryReducer = (state = [], action) => {
   }
 }
 
-const myItemReducer = (state = [], action) => {
-  switch(action.type) {
-    case "FETCHED_MY_ITEMS":
-      return action.payload
-    case "ADD_ITEM":
-      return [...state, action.payload]
-    case "DELETE_ITEM":
-      const newItemsArr = state.filter(item => item.id !== action.payload.id)
-      return newItemsArr
-    case "EMPTY_ITEM_LIST":
-      return []
-    default:
-      return state
-  }
-}
 
 const rootReducer = combineReducers({
   roverPhotos: roverReducer,
@@ -98,8 +83,7 @@ const rootReducer = combineReducers({
   searchKeyword: searchKeywordReducer,
   marsWeather: marsWeatherReducer,
   currentUser: currentUserReducer,
-  myLibraries: myLibraryReducer,
-  myItems: myItemReducer
+  myLibraries: myLibraryReducer
 })
 
 

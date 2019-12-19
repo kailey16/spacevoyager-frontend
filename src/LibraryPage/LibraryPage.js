@@ -8,6 +8,21 @@ import Swal from 'sweetalert2'
 
 
 class LibraryPage extends React.Component {
+  state = {
+    itemsOfLib: []
+  }
+
+  componentDidMount() {
+    if (this.props.libObj) {
+    fetch(`http://localhost:3001/libraries/${this.props.libObj.id}`, {
+      headers: {
+        'Authorization' : `Bearer ${localStorage.getItem('jwt')}`
+      }
+    })
+    .then(resp => resp.json())
+    .then(itemsArray => this.setState({itemsOfLib: itemsArray}))
+    }
+  }
 
   deleteLibrary = () =>{
     this.props.deleteLibrary(this.props.libObj.id)
@@ -30,7 +45,7 @@ class LibraryPage extends React.Component {
           </Link>
           
           <div className="MediaContainer">
-            {this.props.itemsOfLib.map((item, i) => <MyItem key={i} item={item} libId={this.props.libObj.id}/>)}
+            {this.state.itemsOfLib.map((item, i) => <MyItem key={i} item={item} libId={this.props.libObj.id}/>)}
           </div>
         </div>)
         : null}
@@ -44,7 +59,6 @@ const mapStateToProps = (state, ownProps) => {
   const libId = ownProps.match.params.id
 
   return {
-    itemsOfLib: state.myItems,
     libObj: state.myLibraries.find(lib => lib.id.toString() === libId)
   }
 }

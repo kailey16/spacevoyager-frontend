@@ -15,7 +15,7 @@ const LatestDayCard = (props) => {
         <p>{date.split(" ").slice(0,1)}</p>
         <p>{Season}</p>
         <p>{Math.round(AT["mx"])}°C</p>
-        <i class="thermometer icon"/>
+        <i className="thermometer icon"/>
         <p>{Math.round(AT["mn"])}°C</p>
       </div>
     )

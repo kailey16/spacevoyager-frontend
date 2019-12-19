@@ -1,22 +1,4 @@
-// fetch my items
-function fetchedMyItems(items) {
-  return {type: "FETCHED_MY_ITEMS", payload: items}
-}
-
-export function fetchingMyItems() {
-  return (dispatch) => {
-    fetch("http://localhost:3001/myitems", {
-      headers: {
-        'Authorization' : `Bearer ${localStorage.getItem('jwt')}`
-      }})
-    .then(resp => resp.json())
-    .then(items => {
-      dispatch(fetchedMyItems(items))})
-  }
-}  
-
-
-// save item under library
+ // save item under library
 function createdItem(item) {
   return {type: "ADD_ITEM", payload: item}
 }
@@ -63,9 +45,4 @@ export function deleteItemFromLib(libId, itemId) {
     .then(resp => resp.json())
     .then(item => dispatch(deletedItem(item)))
   }
-}
-
-
-export function emptyMyitemList() {
-  return {type: "EMPTY_ITEM_LIST"}
 }
