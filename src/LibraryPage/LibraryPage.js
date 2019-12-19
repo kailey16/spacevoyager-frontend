@@ -13,8 +13,9 @@ class LibraryPage extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.libObj) {
-    fetch(`http://localhost:3001/libraries/${this.props.libObj.id}`, {
+    const libId = localStorage.getItem('currentLibId')
+    if (libId) {
+    fetch(`http://localhost:3001/libraries/${libId}`, {
       headers: {
         'Authorization' : `Bearer ${localStorage.getItem('jwt')}`
       }

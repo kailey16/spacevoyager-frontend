@@ -165,7 +165,7 @@ export function getCurrentUser() {
 // log out
 export function logOut() {
   return (dispatch) => {
-    localStorage.removeItem('jwt')
+    localStorage.clear()
     dispatch(setCurrentUser({}))
     dispatch(emptyLibraryList())
   }
