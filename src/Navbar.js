@@ -10,8 +10,8 @@ const Navbar = (props) => {
         SpaceVoyager
       </Link>
       <div className="right menu">
+        <Link className="item navmenu" to="/searchpage">NASA library</Link>
         <Link className="item navmenu" to="/marsrover">Mars Rover</Link>
-        <Link className="item navmenu" to="/searchpage">NASAlib</Link>
         <Link className="item navmenu" to="/marsweather">Mars weather</Link>
         {props.currentUser.username ?
         <Link className="item navmenu" to="/profile">Profile</Link> : null}

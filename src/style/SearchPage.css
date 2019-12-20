@@ -7,18 +7,18 @@
   font-size: 3vh;
 }
 
-.ui.form.searchForm {
+#searchBar {
   width: 30vw;
-  margin-left: 35vw; 
-}
-
-/* #searchBar {
-  display: inline;
+  display: inline-block;
+  margin: 0;
 }
 
 #searchSubmitButton {
-  display: inline;
-} */
+  display: inline-block;
+  margin-left: 1vw;
+}
+
+
 
 .MediaContainer {
   margin: 0 10vw 0 10vw;

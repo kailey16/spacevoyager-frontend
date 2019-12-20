@@ -25,6 +25,7 @@
   margin: 5vh 0 0 3vw;
   padding: 3vh 2vw 3vh 2vw;
   animation: glowing 3000ms infinite;
+  background-color: rgba(46, 45, 45, 0.89);
 }
 
 @keyframes glowing {

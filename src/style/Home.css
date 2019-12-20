@@ -1,0 +1,52 @@
+/* MAIN CONTAINER */
+.homeMainCon {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../Images/space3.jpg");
+  background-size: cover;
+  background-position: center;
+
+  filter: gray;
+  filter: grayscale(40%);
+}
+
+.mainTextCon {
+  padding: 45vh 0 0 5vw;
+  font-size: 2.5vw;
+  font-weight: 500;
+}
+
+
+
+
+/* OPTION CONTAINER */
+.homeOptionCon {
+  width: 100vw;
+  height: 50vh;
+  display: block;
+  position: relative;
+  background-color: black;
+} 
+
+
+
+
+/* TEXT CONTAINER */
+.homeTextCon {
+  width: 100vw;
+  height: 40vh;
+  display: block;
+  position: relative;
+}
+
+.homeTextCon::after {
+  content: "";
+  background: url('../Images/space6.jpg');
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}

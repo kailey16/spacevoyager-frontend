@@ -2,7 +2,7 @@ import React from "react";
 
 const Options = () => {
   return (
-    <div>
+    <div className="homeOptionCon">
       Options
     </div>
   )

@@ -13,9 +13,9 @@ class MyItem extends React.Component {
     this.getMediaSrc()
   }
 
-  componentDidUpdate() {
-    this.getMediaSrc()
-  }
+  // componentDidUpdate() {
+  //   this.getMediaSrc()
+  // }
 
   getMediaSrc = () => {
     if (this.props.item.category === "nasalibrary") {
