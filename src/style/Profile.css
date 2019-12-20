@@ -1,34 +1,81 @@
 .profileContainer {
   display: grid;
-  grid-template-columns: 25vw 50vw 25vw;
+  grid-template-columns: 40vw 30vw 30vw;
   grid-template-rows: 100%;
   grid-template-areas: 
     "userinfo libraries libraryform";
+  margin-top: 5vh;
 }
 
 
 /* user info */
 .UserInfo {
   grid-area: userinfo;
-  margin: 5vh 0 0 5vw;
+  text-align: center;
 }
+
+.userWelcome {
+  font-size: 1.3vw;
+  font-weight: 600;
+}
+
+.apodCard {
+  width: 34vw;
+  height: auto;
+  margin: 5vh 0 0 3vw;
+  padding: 3vh 2vw 3vh 2vw;
+  animation: glowing 3000ms infinite;
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 -15px rgb(160, 66, 49); }
+  40% { box-shadow: 0 0 25px rgb(160, 66, 49); }
+  60% { box-shadow: 0 0 25px rgb(160, 66, 49); }
+  100% { box-shadow: 0 0 -15px rgb(160, 66, 49); }
+}
+
+.apodTitle {
+  font-size: 1.2vw;
+  font-weight: 500;
+}
+
+.apodPic {
+  width: 30vw;
+  height: auto;
+}
+
+.apodExp {
+  width: 30vw;
+  height: 20vh;
+  overflow: scroll;
+  margin-top: 2vh;
+  font-size: 1vw;
+}
+
+
+
 
 
 /* library card */
 .LibraryContainer {
   grid-area: libraries;
+  display: grid;
+  grid-template-columns: 15vw 15vw;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "libcard libcard";
 }
 
 .LibraryCard {
-  width: 20vw;
-  height: 25vh;
-  border: 1px solid red;
+  width: 12vw;
+  height: 15vh;
+  /* border: 1px solid red; */
   text-align: center;
 }
 
 #libraryIcon {
-  font-size: 5vw;
-  margin-top: 6vh;
+  font-size: 3.5vw;
+  margin-top: 4vh;
   transform: scaleX(-1);
 }
 
@@ -37,11 +84,15 @@
 }
 
 
+
+
+
 /* library form */
 .NewLibraryForm {
+  margin-left: 5vw;
   grid-area: libraryform;
 }
 
 #libraryForm {
-  width: 20vw;
+  width: 15vw;
 }

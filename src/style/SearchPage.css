@@ -29,7 +29,6 @@
     "card card card";
   grid-column-gap: 2.5vw;
   grid-row-gap: 2.5vw;
-  /* justify-items: stretch; */
 }
 
 .mediaCard {

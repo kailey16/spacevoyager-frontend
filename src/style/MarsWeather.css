@@ -44,15 +44,7 @@
   padding: 2vh 0 2vh 0;
   background-color: rgba(0, 0, 0, 0.25);
   /* box-shadow: 5px 5px rgba(99, 25, 7, 0.5); */
-  /* animation: glowing 3000ms infinite; */
 }
-
-/* @keyframes glowing {
-  0% { box-shadow: 0 0 -15px rgba(99, 25, 7); }
-  40% { box-shadow: 0 0 25px rgba(99, 25, 7); }
-  60% { box-shadow: 0 0 25px rgba(99, 25, 7); }
-  100% { box-shadow: 0 0 -15px rgba(99, 25, 7); }
-} */
 
 .weatherCardSol {
   color: black;

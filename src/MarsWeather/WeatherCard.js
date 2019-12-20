@@ -5,7 +5,7 @@ const WeatherCard = (props) => {
   const { AT, First_UTC, Season} = props.weather 
   // HWS, PRE, WD 
   const date = new Date(First_UTC).toDateString() // "Thu Dec 05 2019"
-
+ 
   return (
     <div className="weatherCard">
       <p className="weatherCardSol">SOL {props.sol}</p>
