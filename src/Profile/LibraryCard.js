@@ -17,7 +17,7 @@ class LibraryCard extends React.Component {
         <Link to={`/library/${this.props.lib.id}`}>
           <i id="libraryIcon" className="rocket icon" onClick={()=>{localStorage.setItem("currentLibId", `${this.props.lib.id}`)}}></i>
         </Link>
-        <p>{this.props.lib.title}</p>
+        <p className="libCardTitle">{this.props.lib.title}</p>
       </div>
     )
   }

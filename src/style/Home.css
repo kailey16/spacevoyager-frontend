@@ -30,34 +30,39 @@
 /* OPTION CONTAINER */
 .homeOptionCon {
   width: 100vw;
-  height: 40vh;
+  height: 45vh;
   background-color: black;
+  text-align: center;
+  font-weight: 500;
+} 
+
+.opConTitle {
+  font-size: 1.7vw;
+  padding: 5vh 0 3vh 0;
+}
+
+.optionsCon {
   display: grid;
   grid-template-columns: 10vw 27vw 26vw 27vw 10vw;
   grid-template-rows: auto;
-  text-align: center;
-} 
+}
 
 .OptionCard {
   justify-self: center;
 }
 
 #opCardIcon {
-  margin-top: 8vh;
   font-size: 4vw;
-  /* transform: scaleX(-1); */
 }
 
 .opCardTitle {
   font-size: 1.5vw;
-  font-weight: 500;
-  margin-top: 3vh;
+  margin-top: 2vh;
 }
 
 .opCardText {
   width: 20vw;
   font-size: 1.3vw;
-  font-weight: 500;
 }
 
 
@@ -69,6 +74,7 @@
   height: 40vh;
   display: block;
   position: relative;
+  text-align: center;
 }
 
 .homeTextCon::after {
@@ -81,4 +87,15 @@
   right: 0;
   position: absolute;
   z-index: -1;   
+}
+
+.textConTitle {
+  font-size: 1.5vw;
+  font-weight: 500;
+  padding-top: 10vh;
+}
+
+.textConText {
+  font-size: 1.3vw;
+  font-weight: 500;
 }

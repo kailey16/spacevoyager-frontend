@@ -13,17 +13,17 @@ class NewLibraryForm extends React.Component {
     this.setState({[e.target.name]: e.target.value})
   }
 
-  handleSubmitForm = (e) => {
+  handleSubmitForm = (e) => { 
     e.preventDefault()
     this.props.createLibrary(this.state)
     this.setState({libraryName: "", libraryDescription: ""})
   }
 
-  render() {
+  render() { 
     return (
       <div className="NewLibraryForm">
-        <div>Create new library</div>
-        <form id="libraryForm" className="ui form" onSubmit={this.handleSubmitForm}>
+        <p className="libFormTitle">Create a new library to store the media!</p>
+        <form className="ui form" onSubmit={this.handleSubmitForm}>
           <div className="field">
             <label>Library Name</label>
             <input type="text" name="libraryName" placeholder="Library Name" onChange={this.handleOnChange} value={this.state.libraryName} />
@@ -32,7 +32,7 @@ class NewLibraryForm extends React.Component {
             <label>Description</label>
             <textarea rows="2" placeholder="Description..." name="libraryDescription" onChange={this.handleOnChange} value={this.state.libraryDescription} />
           </div>
-          <button className="ui button" type="submit">Submit</button>
+          <button className="ui inverted grey basic button" type="submit">Submit</button>
         </form>
       </div>
     )

@@ -1,13 +1,16 @@
 import React from "react";
 import { connect } from 'react-redux';
-import LibraryCard from './LibraryCard'
+import LibraryCard from './LibraryCard' 
 
 class LibraryContainer extends React.Component {
 
   render() {
     return (
       <div className="LibraryContainer">
-        {this.props.myLibraries.map(lib => <LibraryCard key={lib.id} lib={lib} />)}
+        <p className="libConTitle">My Libraries</p>
+        <div className="libraries">
+          {this.props.myLibraries.map(lib => <LibraryCard key={lib.id} lib={lib} />)}
+        </div>
       </div>
     )
   }
