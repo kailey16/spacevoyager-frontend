@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 
 
 class LibraryPage extends React.Component {
-  state = {
+  state = { 
     itemsOfLib: []
   }
 
@@ -26,10 +26,6 @@ class LibraryPage extends React.Component {
   }
 
   deleteItem = (itemId) => {
-    // const item = this.state.itemsOfLib.find(item => item.id === itemId)
-    // const index = this.state.itemsOfLib.indexOf(item)
-    // const newArr = [...this.state.itemsOfLib.slice(0,index), ...this.state.itemsOfLib.slice(index+1)]
-
     const newArr = this.state.itemsOfLib.filter(item => item.id !== itemId)
 
     this.setState({itemsOfLib: newArr})

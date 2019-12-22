@@ -11,9 +11,17 @@
 }
 
 .mainTextCon {
-  padding: 45vh 0 0 5vw;
+  padding: 40vh 0 0 5vw;
+}
+
+.mainText {
   font-size: 2.5vw;
   font-weight: 500;
+  margin: 0;
+}
+
+.mainSubText {
+  font-size: 2.1vw;
 }
 
 
@@ -22,11 +30,35 @@
 /* OPTION CONTAINER */
 .homeOptionCon {
   width: 100vw;
-  height: 50vh;
-  display: block;
-  position: relative;
+  height: 40vh;
   background-color: black;
+  display: grid;
+  grid-template-columns: 10vw 27vw 26vw 27vw 10vw;
+  grid-template-rows: auto;
+  text-align: center;
 } 
+
+.OptionCard {
+  justify-self: center;
+}
+
+#opCardIcon {
+  margin-top: 8vh;
+  font-size: 4vw;
+  /* transform: scaleX(-1); */
+}
+
+.opCardTitle {
+  font-size: 1.5vw;
+  font-weight: 500;
+  margin-top: 3vh;
+}
+
+.opCardText {
+  width: 20vw;
+  font-size: 1.3vw;
+  font-weight: 500;
+}
 
 
 
