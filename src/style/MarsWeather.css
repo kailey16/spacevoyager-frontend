@@ -88,7 +88,7 @@
 .weatherCard {
   display: inline-block !important;
   text-align: center;
-  height: 30vh;
+  height: 28vh;
   width: 12vw;
   margin-right: 2vw;
   padding: 2vh 0 2vh 0;
@@ -124,6 +124,6 @@
 }
 
 #thermoIcon {
-  margin: 1.5vh 0 1.5vh 0;
-  font-size: 1.7vw;
+  margin: 1.5vh 0 1vh 0;
+  font-size: 2vw;
 }
