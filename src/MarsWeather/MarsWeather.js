@@ -19,10 +19,13 @@ class MarsWeather extends React.Component {
     const latestDayInfo = sol_keys ? this.props.info[sol_keys[sol_keys.length -1]] : null
     const lastSol = sol_keys ? sol_keys[6] : null
 
-    return (
+    return ( 
       <div className="MarsWeatherPage">
         <MarsWeatherInfo />
         <LatestDayCard sol={lastSol} latestDayInfo={latestDayInfo}/>
+        <div className="seasonCon">
+          Current season in Mars is <span className="season">{latestDayInfo ? latestDayInfo.Season : null}</span>
+        </div>
         <WeatherContainer info={this.props.info} />
       </div> 
     )

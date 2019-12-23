@@ -3,7 +3,7 @@ import React from "react";
 const LatestDayCard = (props) => {
 
   if (props.latestDayInfo) {
-    const { AT, First_UTC, Season} = props.latestDayInfo 
+    const { AT, First_UTC, Season} = props.latestDayInfo  
     // HWS, PRE, WD 
     const date = new Date(First_UTC).toDateString()
 
