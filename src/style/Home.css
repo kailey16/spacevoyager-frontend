@@ -30,7 +30,7 @@
 /* OPTION CONTAINER */
 .homeOptionCon {
   width: 100vw;
-  height: 45vh;
+  height: 50vh;
   background-color: black;
   text-align: center;
   font-weight: 500;
@@ -38,7 +38,7 @@
 
 .opConTitle {
   font-size: 1.7vw;
-  padding: 5vh 0 3vh 0;
+  padding: 7vh 0 3vh 0;
 }
 
 .optionsCon {

@@ -6,12 +6,21 @@ import { fetchingWeatherInfo } from '../redux/actions'
 import LatestDayCard from './LatestDayCard'
 import '../style/MarsWeather.css'
 import MarsWeatherInfo from './MarsWeatherInfo'
+import WeatherInfoModal from './WeatherInfoModal'
  
 
 class MarsWeather extends React.Component {
 
   componentDidMount() {
     this.props.fetchingWeatherInfo()
+  }
+
+  infoModalOpen = () => {
+    document.getElementById("weatherModal").classList.add("active")
+  }
+
+  infoModalClose = () => {
+    document.getElementById("weatherModal").classList.remove("active")
   }
 
   render() {
@@ -21,12 +30,13 @@ class MarsWeather extends React.Component {
 
     return ( 
       <div className="MarsWeatherPage">
-        <MarsWeatherInfo />
+        <MarsWeatherInfo infoModalOpen={this.infoModalOpen} />
         <LatestDayCard sol={lastSol} latestDayInfo={latestDayInfo}/>
         <div className="seasonCon">
           Current season in Mars is <span className="season">{latestDayInfo ? latestDayInfo.Season : null}</span>
         </div>
         <WeatherContainer info={this.props.info} />
+        <WeatherInfoModal infoModalClose={this.infoModalClose} />
       </div> 
     )
   } 

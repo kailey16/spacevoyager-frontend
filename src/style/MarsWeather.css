@@ -79,7 +79,8 @@
 
 .season {
   font-size: 1.4vw;
-  color:rgba(77, 23, 2, 1);
+  /* color:rgba(77, 23, 2, 1); */
+  color: black;
 }
 
 
@@ -100,8 +101,7 @@
   margin-right: 2vw;
   padding: 2vh 0 2vh 0;
   background-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 5px 5px rgba(99, 25, 7, 0.5);
-  /* color: black; */
+  box-shadow: 5px 5px rgba(99, 25, 7, 0.7);
 }
 
 .weatherCardTop {
@@ -134,4 +134,66 @@
 #thermoIcon {
   margin: 1.5vh 0 1vh 0;
   font-size: 2vw;
+}
+
+
+
+
+
+/* Mars climate modal */
+#weatherModal {
+  background-color: rgb(15, 15, 15);
+  width: 80vw;
+  height: 80vh;
+  margin: 5vh 0 0 10vw;
+}
+
+.weatherModalTop {
+  margin: 3vh 0 0 0;
+  text-align: center;
+}
+
+.weatherModalTitle {
+  font-size: 1.3vw;
+  font-weight: 500;
+  padding-left: 4vw;
+}
+
+#weatherModalButton {
+  float: right;
+  margin-right: 2vw;
+}
+
+.weatherPics {
+  width: 80vw;
+  margin: 0 0 2vh 5vw;
+}
+
+.marsWeatherPic1 {
+  display: inline-block;
+  text-align: center;
+}
+
+.pic1 {
+  width: 30vw;
+  height: auto;
+}
+
+.marsWeatherPic2 {
+  display: inline-block;
+  padding: 0 0 1vh 3vw;
+  text-align: center;
+}
+
+.pic2 {
+  width: 34vw;
+  height: auto;
+}
+
+.weatherModalText {
+  margin: 0 3vw 0 3vw;
+  padding: 1vw 0 0 1vw;
+  font-size: 1vw;
+  height: 25vh;
+  overflow: scroll;
 }
