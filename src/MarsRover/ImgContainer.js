@@ -19,7 +19,11 @@ class ImgContainer extends React.Component {
       <div>
         {this.state.bigImage ?
         <BigImagePage showImgUrl={this.state.showImgUrl} bigImageShow={this.bigImageShow} />
-        : <div className="ImgContainer">{this.props.photos.map(photo => <Img key={photo.id} photo={photo} bigImageShow={this.bigImageShow}/>)}</div>}
+        : <div className="ImgContainer">{
+        this.props.photos.message ? 
+        <div>There is no photos on this day</div> :
+        this.props.photos.map(photo => <Img key={photo.id} photo={photo} bigImageShow={this.bigImageShow}/>)
+        }</div>}
         <LoadingSpinnerComponent />
       </div>
     )

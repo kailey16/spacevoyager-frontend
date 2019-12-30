@@ -19,6 +19,27 @@ export function fetchingRoverPhotos() {
   } 
 }
 
+export function fetchingRoverPhotosWithDate(date) {
+  return (dispatch) => {
+    trackPromise(
+      fetch("http://localhost:3001/marsrover/date", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({date})
+      })
+      .then(resp => resp.json())
+      .then(photos => {
+        console.log(photos)
+        dispatch(fetchedRoverPhotos(photos))
+        }
+      )
+    )
+  } 
+}
+
 
 
 ///// Mars weather page actions

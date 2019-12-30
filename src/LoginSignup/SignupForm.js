@@ -39,8 +39,7 @@ class SignupForm extends React.Component {
         </div>
         <button className="ui inverted button" type="submit">Start Exploring Space</button>
       </form>
-      <p className="loginPageText">or</p>
-      <button className="ui inverted purple button" onClick={this.props.formSwitch}>Go back to Login</button>
+      <button className="ui inverted violet button" onClick={this.props.formSwitch}>Go back to Login</button>
       </div>
     )
   }

@@ -12,9 +12,11 @@ const WeatherCard = (props) => {
         <p className="weatherCardSol">SOL {props.sol}</p>
         <p className="weatherDate">{date.split(" ").slice(0,1)} {date.split(" ").slice(1,3).join(" ")} {date.split(" ").slice(-1)}</p>
       </div>
-      <p className="weatherTemp">{Math.round(AT["mx"])}°C</p>
-      <i id="thermoIcon" className="thermometer icon"/>
-      <p className="weatherTemp">{Math.round(AT["mn"])}°C</p>
+      <div className="weatherCardBottom">
+        <p className="weatherTemp">{Math.round(AT["mx"])}°C</p>
+        <i id="thermoIcon" className="thermometer icon"/>
+        <p className="weatherTemp">{Math.round(AT["mn"])}°C</p>
+      </div>
   </div>
   )
 }

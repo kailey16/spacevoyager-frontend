@@ -75,9 +75,8 @@
 }
 
 .solModalContent {
-  background-color: black !important;
+  background-color: rgb(10, 10, 10) !important;
   font-size: 1vw !important;
-  border-radius: 20px !important;
 }
 
 
@@ -87,13 +86,12 @@
 .seasonCon {
   grid-area: season;
   font-size: 1.2vw;
-  margin: 5vh 0 0 9vw;
+  margin: 5vh 0 0 10vw;
   font-weight: 600;
 }
 
 .season {
   font-size: 1.4vw;
-  color: black;
 }
 
 
@@ -112,16 +110,21 @@
   height: 28vh;
   width: 12vw;
   margin-right: 2vw;
-  padding: 2vh 0 2vh 0;
+  /* padding: 2vh 0 2vh 0; */
   background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
   /* box-shadow: 5px 5px rgba(99, 25, 7, 0.7); */
 }
 
 .weatherCardTop {
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.733);
+  padding: 2vh 0 1vh 0;
   width: 10vw;
-  margin: 0 0 2vh 1vw;
-  padding-bottom: 1vh;
+  margin-left: 1vw;
+}
+
+.weatherCardBottom {
+  margin-top: 2vh;
 }
 
 .weatherCardSol {

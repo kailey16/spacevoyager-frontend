@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginPageFormCon">
         <p className="loginTitle">Welcome back to SpaceVoyager!</p>
-        <p className="loginPageText">Please sign into your account.</p>
+        <p className="loginPageText">Please sign into your account</p>
         <form className="ui form LoginPageForm" onSubmit={this.handleOnsubmit}>
           <div className="field">
             <label>Username</label>
@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
           <button className="ui inverted button" type="submit">Sign in</button>
         </form>
         <p className="loginPageText">Are you not a member of SpaceVoyager?</p>
-        <button className="ui inverted purple button" onClick={this.props.formSwitch}>Signup</button>
+        <button className="ui inverted violet button" onClick={this.props.formSwitch}>Signup</button>
       </div>
     )
   }

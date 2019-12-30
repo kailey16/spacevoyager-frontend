@@ -4,7 +4,7 @@ const Text = () => {
   return (
     <div className="homeTextCon">
       <p className="textConTitle">
-        You can sign up for SpaceVoyage to enjoy even further!
+        You can sign up for SpaceVoyage to enjoy even further
       </p>
       <p className="textConText">
         <i class="fas fa-check textCheckIcon"></i>

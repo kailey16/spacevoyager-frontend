@@ -24,7 +24,6 @@ class CameraRadio extends React.Component {
         <div className="radioButtonBox">
           <p className="cameraSort">Rover Cameras : </p>
           
-
           {/* FHAZ */}
           <input className="cameraRadioOption" type="radio" id="fhaz" name="camera" checked={this.props.camera === "fhaz" ? true : false} onChange={this.props.radioClicked} />
           <label htmlFor="fhaz">FHAZ<i className="camQuestion far fa-question-circle" onMouseEnter={this.openCamModal} onMouseOut={this.closeCamModal}></i></label>
