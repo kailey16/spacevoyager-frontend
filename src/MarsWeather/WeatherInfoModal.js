@@ -4,7 +4,7 @@ const WeatherInfoModal = (props) => {
   return(
     <div id="weatherModal" class="ui basic modal">
     <div class="infoModalTop">
-      <button class="infoModalButton ui inverted grey basic button" onClick={props.infoModalClose}>Exit</button>
+      <button id="infoModalButton" class="ui inverted grey basic button" onClick={props.infoModalClose}>Exit</button>
       <p class="infoModalTitle">Climate of Mars</p>
     </div>
 
