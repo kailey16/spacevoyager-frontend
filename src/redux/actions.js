@@ -1,5 +1,6 @@
 import { trackPromise } from 'react-promise-tracker'
 import { fetchingMyLibraries, emptyLibraryList } from './actions-library'
+import Swal from 'sweetalert2'
 
 
 ///// Mars Rover page actions 
@@ -110,7 +111,12 @@ export function loginRequest(loginInfo) {
         localStorage.setItem("jwt", data.jwt)
         dispatch(setCurrentUser(data.user))
         dispatch(fetchingMyLibraries())
-      } else {alert(`${data.message}`)}
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: `${data.message}`
+        })
+      }
     })
   }
 }
@@ -138,9 +144,13 @@ export function signupRequest(signupInfo) {
         localStorage.setItem("jwt", data.jwt)
         dispatch(setCurrentUser(data.user))
         dispatch(fetchingMyLibraries())
-      } else {alert(`${data.error.join(", ")}`)}
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: `${data.error.join(", ")}`
+        })
+      }
     })
-    .catch(error => alert(`${error.message}`))
   }
 }
 

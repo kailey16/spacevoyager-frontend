@@ -22,7 +22,7 @@ class NewLibraryForm extends React.Component {
   render() { 
     return (
       <div className="NewLibraryForm">
-        <p className="libFormTitle">Create a new library to store the media!</p>
+        <p className="libFormTitle">Create a new library<br/>to store the media!</p>
         <form className="ui form" onSubmit={this.handleSubmitForm}>
           <div className="field">
             <label>Library Name</label>

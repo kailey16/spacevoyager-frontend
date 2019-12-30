@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { signupRequest } from '../redux/actions'
 
 class SignupForm extends React.Component {
-
+ 
   state = {
     username: "",
     password: "",
@@ -23,7 +23,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="LoginPageFormCon">
-      <p>Sign up for SpaceVoyager</p>
+      <p className="loginTitle">Sign up for SpaceVoyager!</p>
       <form className="ui form LoginPageForm" onSubmit={this.handleOnsubmit}>
         <div className="field">
           <label>Username</label>
@@ -37,10 +37,10 @@ class SignupForm extends React.Component {
           <label>Email</label>
           <input type="text" name="email" placeholder="Email" onChange={this.inputOnchange} value={this.state.email} />
         </div>
-        <button className="ui button" type="submit">Start Exploring Space</button>
+        <button className="ui inverted button" type="submit">Start Exploring Space</button>
       </form>
-      <p>or</p>
-      <button className="ui button" onClick={this.props.formSwitch}>Go back to Login</button>
+      <p className="loginPageText">or</p>
+      <button className="ui inverted purple button" onClick={this.props.formSwitch}>Go back to Login</button>
       </div>
     )
   }

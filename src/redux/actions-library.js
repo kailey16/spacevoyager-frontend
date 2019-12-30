@@ -1,4 +1,5 @@
-import Swal from 'sweetalert2/src/sweetalert2.js'
+import Swal from 'sweetalert2'
+
 
 // get my library list
 function fetchedMyLibraries(libs) {

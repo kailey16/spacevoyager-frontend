@@ -20,7 +20,7 @@
   grid-area: infoCon;
   justify-self: start;
   width: 25vw;
-  margin: 15vh 0 0 10vw;
+  margin: 17vh 0 0 10vw;
   font-size: 1.1vw;
 }
 
@@ -29,21 +29,24 @@
 /* last day card */
 .latestDayCard {
   grid-area: lastDay;
-  justify-self: end;
   text-align: center;
-  margin: 10vh 11vw 0 0;
+  margin: 11vh 0 0 21vw;
   width: 17vw;
   height: 33vh;
   background-image: linear-gradient(to right, rgba(83, 31, 7, 0.5), rgb(15, 15, 15));
-  border-radius: 70px;
   font-weight: 500;
+  border-radius: 70px;
 }
 
 .latestDayCardTop {
-  width: 14vw;
-  margin: 3vh 0 2vh 2vw;
-  border-bottom: 2px solid white;
-  padding-bottom: 1vh;
+  padding: 3vh 0 2vh 0;
+  background-image: linear-gradient(to right, rgba(216, 138, 102, 0.39), rgba(114, 39, 5, 0.555));
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+}
+
+.latestDayCardBottom {
+  padding-top: 2vh;
 }
 
 .ldSol {
@@ -57,7 +60,7 @@
 }
 
 .ldContent {
-  font-size: 1.2vw;
+  font-size: 1.3vw;
   margin: 0;
 }
 
@@ -66,6 +69,17 @@
   font-weight: 500;
   margin: 2vh 0 1.5vh 0;
 }
+
+#solModal {
+  width: 20vw;
+}
+
+.solModalContent {
+  background-color: black !important;
+  font-size: 1vw !important;
+  border-radius: 20px !important;
+}
+
 
 
 
@@ -79,7 +93,6 @@
 
 .season {
   font-size: 1.4vw;
-  /* color:rgba(77, 23, 2, 1); */
   color: black;
 }
 
@@ -101,7 +114,7 @@
   margin-right: 2vw;
   padding: 2vh 0 2vh 0;
   background-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 5px 5px rgba(99, 25, 7, 0.7);
+  /* box-shadow: 5px 5px rgba(99, 25, 7, 0.7); */
 }
 
 .weatherCardTop {
@@ -146,6 +159,7 @@
   width: 90vw;
   height: 80vh;
   margin: 5vh 0 0 5vw;
+  border-radius: 10px;
 }
 
 .infoModalTop {
@@ -178,6 +192,7 @@
 .pic1 {
   width: 30vw;
   height: auto;
+  border-radius: 20px;
 }
 
 .modalPic2 {
@@ -189,6 +204,7 @@
 .pic2 {
   width: 34vw;
   height: auto;
+  border-radius: 20px;
 }
 
 .weatherModalText {
@@ -198,5 +214,5 @@
   height: 25vh;
   overflow: scroll;
   background-color: rgba(41, 40, 40, 0.753);
-  border-radius: 20px;
+  border-radius: 10px;
 }

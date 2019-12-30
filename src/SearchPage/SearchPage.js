@@ -29,7 +29,7 @@ class SearchPage extends React.Component {
           <p>Search anything you want to see from the NASA library</p>
           <form className="ui form" onSubmit={this.handleFormSubmitted}>
             <div className="field">
-              <input id="searchBar" type="text" name="searchInput" placeholder="Type your search keyword..." value={this.props.searchKeyword} onChange={this.handleKeywordOnchange} />
+              <input id="searchBar" type="text" name="searchInput" placeholder="Type your search keyword... ex)moon" value={this.props.searchKeyword} onChange={this.handleKeywordOnchange} />
               <input id="searchSubmitButton" className="ui inverted red button" type="submit" value="search"/>
             </div>
           </form>

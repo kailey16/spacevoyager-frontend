@@ -13,9 +13,9 @@ class MyItem extends React.Component {
     this.getMediaSrc()
   }
 
-  // componentDidUpdate() {
-  //   this.getMediaSrc()
-  // }
+  componentDidUpdate() {
+    this.getMediaSrc()
+  }
 
   getMediaSrc = () => {
     if (this.props.item.category === "nasalibrary") {
@@ -57,7 +57,7 @@ class MyItem extends React.Component {
           </div>)
           }
           <div className="mediaDescription">{this.props.item.description}</div>
-          <button id="deleteItemFromLib" className="ui inverted grey button" onClick={this.deleteItemClicked}>Delete from Library</button>
+          <button id="deleteItemFromLib" className="ui inverted grey basic button" onClick={this.deleteItemClicked}>Delete from Library</button>
         </div>
       </div>
     )

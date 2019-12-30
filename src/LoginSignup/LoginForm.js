@@ -19,12 +19,12 @@ class LoginForm extends React.Component {
     this.props.loginRequest(this.state)
     this.setState({username: "", password: ""})
   }
-
+ 
   render() {
     return (
       <div className="LoginPageFormCon">
-        <p>Welcome back to SpaceVoyager!</p>
-        <p>Please sign into your account.</p>
+        <p className="loginTitle">Welcome back to SpaceVoyager!</p>
+        <p className="loginPageText">Please sign into your account.</p>
         <form className="ui form LoginPageForm" onSubmit={this.handleOnsubmit}>
           <div className="field">
             <label>Username</label>
@@ -34,10 +34,10 @@ class LoginForm extends React.Component {
             <label>Password</label>
             <input type="password" name="password" placeholder="Password" onChange={this.inputOnchange} value={this.state.password} />
           </div>
-          <button className="ui button" type="submit">Sign in</button>
+          <button className="ui inverted button" type="submit">Sign in</button>
         </form>
-        <p>Are you not a member of SpaceVoyager?</p>
-        <button className="ui button" onClick={this.props.formSwitch}>Signup</button>
+        <p className="loginPageText">Are you not a member of SpaceVoyager?</p>
+        <button className="ui inverted purple button" onClick={this.props.formSwitch}>Signup</button>
       </div>
     )
   }

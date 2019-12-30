@@ -1,5 +1,6 @@
 import Swal from 'sweetalert2'
 
+
 // save item under library
 export function saveImgToLibrary(lib, img) {
   return dispatch => {
@@ -47,7 +48,7 @@ export function deleteItemFromLib(libId, itemId) {
       console.log(item)
       Swal.fire({
         icon: 'success',
-        text: 'Successfully deleted from library!'
+        text: 'Successfully deleted from the library!'
       })
     })
   }

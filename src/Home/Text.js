@@ -3,8 +3,15 @@ import React from "react";
 const Text = () => {
   return (
     <div className="homeTextCon">
-      <p className="textConTitle">When you sign up at SpaceVoyage</p>
-      <p className="textConText">You can store any media from the website to libraries you created and go back to explore those anytime! </p>
+      <p className="textConTitle">
+        You can sign up for SpaceVoyage to enjoy even further!
+      </p>
+      <p className="textConText">
+        <i class="fas fa-check textCheckIcon"></i>
+        Create libraries to store the media and go back to see anytime<br/>
+        <i class="fas fa-check textCheckIcon"></i>
+        Checkout NASA's Astronomy Picture of the Day - it changes everyday!<br/>
+      </p>
     </div>
   )
 }

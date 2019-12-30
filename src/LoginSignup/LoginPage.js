@@ -10,12 +10,13 @@ class LoginPage extends React.Component {
   }
 
   formSwitch = () => {
-    this.setState(pre => {return {signup: !pre.signup}})
+    this.setState(pre => {return {signup: !pre.signup}}) 
   }
 
   render() {
     return (
       <div className="LoginPage">
+        <i id="loginPageIcon" className="fas fa-user-astronaut"></i>
         {this.state.signup ? <SignupForm formSwitch={this.formSwitch} /> : <LoginForm formSwitch={this.formSwitch} />}
       </div>
     )
