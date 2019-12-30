@@ -3,18 +3,18 @@ import React from "react";
 const WeatherInfoModal = (props) => {
   return(
     <div id="weatherModal" class="ui basic modal">
-    <div class="weatherModalTop">
-      <button id="weatherModalButton" class="ui inverted grey basic button" onClick={props.infoModalClose}>Exit</button>
-      <p class="weatherModalTitle">Climate of Mars</p>
+    <div class="infoModalTop">
+      <button class="infoModalButton ui inverted grey basic button" onClick={props.infoModalClose}>Exit</button>
+      <p class="infoModalTitle">Climate of Mars</p>
     </div>
 
     <div class="content">
-      <div className="weatherPics">
-        <div className="marsWeatherPic1">
+      <div className="modalPics">
+        <div className="modalPic1">
           <img className="pic1" src={require("../Images/marsDuststorm.gif")} alt="mars duststorm" />
           <p>Mars (before/after) global dust storm (July 2018)</p>
         </div>
-        <div className="marsWeatherPic2">
+        <div className="modalPic2">
           <img className="pic2" src={require("../Images/marsatmosphere.jpg")} alt="mars atmosphere" />
           <p>Atmosphere of Mars</p>
         </div>

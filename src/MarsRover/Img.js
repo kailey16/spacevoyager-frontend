@@ -16,7 +16,7 @@ class Img extends React.Component {
     return ( 
       <div className="roverImgCard">
         <img className="roverImg" src={this.props.photo["img_src"]} alt="roverImg" onClick={() => this.props.bigImageShow(this.props.photo["img_src"])} />
-        <button id="saveToLibButton" className="ui inverted grey button" onClick={this.openModal}>Save To My Library</button>
+        <button id="saveToLibButton" className="ui inverted grey basic button" onClick={this.openModal}>Save To My Library</button>
         
         <LibraryModal id={`libListModal-${this.props.photo.id}`} closeModal={this.closeModal} photo={this.props.photo}/>
       </div>

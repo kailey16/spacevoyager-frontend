@@ -31,11 +31,11 @@
   grid-area: lastDay;
   justify-self: end;
   text-align: center;
-  margin: 10vh 13vw 0 0;
-  width: 18vw;
-  height: 35vh;
-  background-image: linear-gradient(to right, rgba(99, 25, 7, 0.5), rgb(0, 0, 0));
-  border-radius: 50px;
+  margin: 10vh 11vw 0 0;
+  width: 17vw;
+  height: 33vh;
+  background-image: linear-gradient(to right, rgba(83, 31, 7, 0.5), rgb(15, 15, 15));
+  border-radius: 70px;
   font-weight: 500;
 }
 
@@ -47,17 +47,17 @@
 }
 
 .ldSol {
-  font-size: 1.5vw;
+  font-size: 1.4vw;
   margin: 0 0 1vh 0;
 }
 
 .ldDate {
-  font-size: 1.3vw;
+  font-size: 1.1vw;
   margin: 0;
 }
 
 .ldContent {
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   margin: 0;
 }
 
@@ -73,7 +73,7 @@
 .seasonCon {
   grid-area: season;
   font-size: 1.2vw;
-  margin: 5vh 0 0 10vw;
+  margin: 5vh 0 0 9vw;
   font-weight: 600;
 }
 
@@ -148,28 +148,28 @@
   margin: 5vh 0 0 10vw;
 }
 
-.weatherModalTop {
+.infoModalTop {
   margin: 3vh 0 0 0;
   text-align: center;
 }
 
-.weatherModalTitle {
+.infoModalTitle {
   font-size: 1.3vw;
   font-weight: 500;
   padding-left: 4vw;
 }
 
-#weatherModalButton {
+.infoModalButton {
   float: right;
   margin-right: 2vw;
 }
 
-.weatherPics {
-  width: 80vw;
+.modalPics {
+  width: 70vw;
   margin: 0 0 2vh 5vw;
 }
 
-.marsWeatherPic1 {
+.modalPic1 {
   display: inline-block;
   text-align: center;
 }
@@ -179,7 +179,7 @@
   height: auto;
 }
 
-.marsWeatherPic2 {
+.modalPic2 {
   display: inline-block;
   padding: 0 0 1vh 3vw;
   text-align: center;

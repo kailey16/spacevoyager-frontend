@@ -14,7 +14,7 @@ class ImgContainer extends React.Component {
     this.setState(pre => {return {bigImage: !pre.bigImage, showImgUrl: imgUrl}})
   }
 
-  render() {
+  render() { 
     return (
       <div>
         {this.state.bigImage ?

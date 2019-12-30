@@ -4,7 +4,7 @@ const BigImagePage = (props) => {
 
   return (
   <div className="imgShowContainer">
-    <button id="backToGalleryButton" className="ui button" onClick={() => props.bigImageShow("")}>Back to Gallery</button><br></br>
+    <button id="backToGalleryButton" className="ui inverted red button" onClick={() => props.bigImageShow("")}>Back to Gallery</button><br></br>
     <img className="imgShow" src={props.showImgUrl} alt="big rendering" />
   </div>
   )

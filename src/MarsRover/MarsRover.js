@@ -1,21 +1,22 @@
 import React from "react";
 import ImgContainer from './ImgContainer'
 import CameraRadio from './CameraRadio'
+import RoverInfoModal from './RoverInfoModal'
 import '../style/MarsRover.css'
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
-import { fetchingRoverPhotos } from '../redux/actions'
+import { fetchingRoverPhotos } from '../redux/actions' 
 
 
 class MarsRover extends React.Component {
    
   state = {
     showall: true,
-    fhaz: false,
-    rhaz: false,
-    mast: false,
-    chemcam: false,
-    navcam: false
+    fhaz: true,
+    rhaz: true,
+    mast: true,
+    chemcam: true,
+    navcam: true
   }
 
   componentDidMount() {
@@ -31,6 +32,14 @@ class MarsRover extends React.Component {
     this.setState({ showall: true, fhaz: false, rhaz: false, mast: false, chemcam: false, navcam: false})
   }
 
+  modalOpen = () => {
+    document.getElementById("roverModal").classList.add("active")
+  }
+
+  modalClose = () => {
+    document.getElementById("roverModal").classList.remove("active")
+  }
+
   render() {
     let rendering_photos;
     this.state.showall ? rendering_photos = this.props.photos : rendering_photos = this.props.photos.filter(p => {
@@ -39,7 +48,8 @@ class MarsRover extends React.Component {
 
     return (
       <div className="MarsRoverPage">
-        <CameraRadio fhaz={this.state.fhaz} rhaz={this.state.rhaz} mast={this.state.mast} chemcam={this.state.chemcam} navcam={this.state.navcam} radioClicked={this.radioClicked} showallClicked={this.showallClicked} /><br></br>
+        <RoverInfoModal modalClose={this.modalClose}/>
+        <CameraRadio fhaz={this.state.fhaz} rhaz={this.state.rhaz} mast={this.state.mast} chemcam={this.state.chemcam} navcam={this.state.navcam} radioClicked={this.radioClicked} showallClicked={this.showallClicked} modalOpen={this.modalOpen}/><br></br>
         <ImgContainer photos={rendering_photos}/>
       </div>
     )
