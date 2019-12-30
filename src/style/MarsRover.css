@@ -163,7 +163,11 @@
 
 .roverModalBody {
   font-size: 1vw;
-  margin: 5vh 5vw 5vh 5vw;
+  margin: 5vh 5vw 10vh 5vw;
+}
+
+.roverDefCon{
+  margin-bottom: 5vh;
 }
 
 .roverModalTitle {
@@ -174,9 +178,11 @@
 .roverPic {
   width: 30vw;
   height: auto;
-  display: inline-block;
+  float: left;
+  margin-right: 1vw;
+  border-radius: 10px;
 }
 
-.roverText {
-  display: inline-block;
+.curiosityCon {
+  margin-bottom: 5vh;
 }

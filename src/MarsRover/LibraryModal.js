@@ -15,11 +15,11 @@ class LibraryModal extends React.Component {
   render() {
     return (
     <div id={this.props.id} className="ui mini modal">
-      <div className="header">
+      <div className="saveLibModal header">
         My Libraries <i id="modalCloseButton" className="close icon" onClick={this.props.closeModal}></i>
       </div>
-      <div className="content">
-        {this.props.myLibraries.map(lib => <button key={lib.id} className="modalLibTitle ui button" onClick={() => this.saveImgUnderLib(lib)}>{lib.title}</button>)}
+      <div className="saveLibModal content">
+        {this.props.myLibraries.map(lib => <button key={lib.id} className="modalLibTitle ui inverted red basic button" onClick={() => this.saveImgUnderLib(lib)}>{lib.title}</button>)}
       </div>
     </div>
     )

@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2/src/sweetalert2.js'
+
 // get my library list
 function fetchedMyLibraries(libs) {
   return {type: "FETCHED_MY_LIBRARIES", payload: libs}
@@ -53,7 +55,13 @@ export function deleteLibrary(libId) {
       }
     })
     .then(resp => resp.json())
-    .then(lib => dispatch(myLibraryDeleted(lib)))
+    .then(lib => {
+      dispatch(myLibraryDeleted(lib))
+      Swal.fire({
+        icon: 'success',
+        text: `${lib.title} is successfully deleted!`
+      })
+    })
   } 
 }
 

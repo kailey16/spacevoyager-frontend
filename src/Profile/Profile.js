@@ -4,7 +4,7 @@ import LibraryContainer from './LibraryContainer'
 import '../style/Profile.css'
 import { connect } from 'react-redux';
 import NewLibraryForm from './NewLibraryForm'
-
+ 
 
 class Profile extends React.Component {
 

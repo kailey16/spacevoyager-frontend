@@ -2,13 +2,13 @@ import React from "react";
 
 const WeatherInfoModal = (props) => {
   return(
-    <div id="weatherModal" class="ui basic modal">
-    <div class="infoModalTop">
-      <button id="infoModalButton" class="ui inverted grey basic button" onClick={props.infoModalClose}>Exit</button>
-      <p class="infoModalTitle">Climate of Mars</p>
+    <div id="weatherModal" className="ui basic modal">
+    <div className="infoModalTop">
+      <button id="infoModalButton" className="ui inverted grey basic button" onClick={props.infoModalClose}>Exit</button>
+      <p className="infoModalTitle">Climate of Mars</p>
     </div>
 
-    <div class="content">
+    <div className="content">
       <div className="modalPics">
         <div className="modalPic1">
           <img className="pic1" src={require("../Images/marsDuststorm.gif")} alt="mars duststorm" />

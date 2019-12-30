@@ -12,7 +12,6 @@ import LoginPage from './LoginSignup/LoginPage'
 import './style/App.css'
 import { getCurrentUser } from './redux/actions'
 
-
 class App extends React.Component {
 
   componentDidMount() {

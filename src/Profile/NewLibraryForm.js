@@ -11,7 +11,7 @@ class NewLibraryForm extends React.Component {
 
   handleOnChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
-  }
+  } 
 
   handleSubmitForm = (e) => { 
     e.preventDefault()

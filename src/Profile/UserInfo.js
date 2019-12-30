@@ -19,15 +19,15 @@ class UserInfo extends React.Component {
     })
   }
 
-  render() {
+  render() { 
     const { date, explanation, url, title, media_type } = this.state.apodInfo 
 
     return (
       <div className="UserInfo">
         <p className="userWelcome">Welcome {this.props.currentUser.username}</p>
-        <p className="apodTitle">NASA's Astronomy Picture of the Day on {date}</p>
         <div className="apodCard">
-          <p className="apodTitle">{title}</p>
+          <p className="apodTitle">NASA's Astronomy Picture of the Day on <span className="apodDate">{date}</span></p>
+          <p className="apodCardTitle">{title}</p>
           {media_type === "video" ? 
           (<div>
           <video className="apodPic" controls src={url} />

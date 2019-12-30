@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { deleteLibrary } from '../redux/actions-library'
-
+ 
 
 class LibraryCard extends React.Component {
 
@@ -14,8 +14,8 @@ class LibraryCard extends React.Component {
     return (
       <div className="LibraryCard">
         <i id="libraryDeleteButton" className="close icon" onClick={this.deleteLibrary}></i>
-        <Link to={`/library/${this.props.lib.id}`}>
-          <i id="libraryIcon" className="rocket icon" onClick={()=>{localStorage.setItem("currentLibId", `${this.props.lib.id}`)}}></i>
+        <Link className="rocketIconCon" to={`/library/${this.props.lib.id}`}>
+          <i id="libraryIcon" class="fas fa-rocket" onClick={()=>{localStorage.setItem("currentLibId", `${this.props.lib.id}`)}}></i>
         </Link>
         <p className="libCardTitle">{this.props.lib.title}</p>
       </div>

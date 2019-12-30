@@ -4,7 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 import '../style/Library.css'
 import MyItem from './MyItem'
 import { deleteLibrary } from '../redux/actions-library'
-import Swal from 'sweetalert2' 
 
 
 class LibraryPage extends React.Component {
@@ -33,10 +32,6 @@ class LibraryPage extends React.Component {
 
   deleteLibrary = () =>{
     this.props.deleteLibrary(this.props.libObj.id)
-    Swal.fire({
-      icon: 'success',
-      text: `${this.props.libObj.title} is successfully deleted!`,
-    })
   }
 
   render() {

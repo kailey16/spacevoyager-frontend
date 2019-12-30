@@ -47,7 +47,7 @@ class Media extends React.Component {
         </div>)
         }
         <div className="mediaDescription">{this.props.media["data"][0]["description"]}</div>
-        <button id="libSaveButton" className="ui inverted grey button" onClick={this.openModal}>Save To My Library</button>
+        <button id="libSaveButton" className="ui inverted grey basic button" onClick={this.openModal}>Save To My Library</button>
         </div>
 
         <LibraryModal id={this.modalId()} closeModal={this.closeModal} photo={this.props.media}/>

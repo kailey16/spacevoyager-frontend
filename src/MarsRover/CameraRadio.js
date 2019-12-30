@@ -26,7 +26,7 @@ class CameraRadio extends React.Component {
           
 
           {/* FHAZ */}
-          <input className="cameraRadioOption" type="radio" id="fhaz" name="fhaz" checked={this.props.fhaz} onClick={this.props.radioClicked} />
+          <input className="cameraRadioOption" type="radio" id="fhaz" name="camera" checked={this.props.camera === "fhaz" ? true : false} onChange={this.props.radioClicked} />
           <label htmlFor="fhaz">FHAZ<i className="camQuestion far fa-question-circle" onMouseEnter={this.openCamModal} onMouseOut={this.closeCamModal}></i></label>
 
           <div id="fhazModal" className="ui tiny modal radioModal">
@@ -37,7 +37,7 @@ class CameraRadio extends React.Component {
   
 
           {/* RHAZ */}
-          <input className="cameraRadioOption" type="radio" id="rhaz" name="rhaz" checked={this.props.rhaz} onClick={this.props.radioClicked} />
+          <input className="cameraRadioOption" type="radio" id="rhaz" name="camera" checked={this.props.camera === "rhaz" ? true : false} onChange={this.props.radioClicked} />
           <label htmlFor="rhaz">RHAZ<i className="camQuestion far fa-question-circle" onMouseEnter={this.openCamModal} onMouseOut={this.closeCamModal}></i></label>
 
           <div id="rhazModal" className="ui tiny modal radioModal">
@@ -48,7 +48,7 @@ class CameraRadio extends React.Component {
           
 
           {/* MAST */}
-          <input className="cameraRadioOption" type="radio" id="mast" name="mast" checked={this.props.mast} onClick={this.props.radioClicked} />
+          <input className="cameraRadioOption" type="radio" id="mast" name="camera" checked={this.props.camera === "mast" ? true : false} onChange={this.props.radioClicked} />
           <label htmlFor="mast">MAST<i className="camQuestion far fa-question-circle" onMouseEnter={this.openCamModal} onMouseOut={this.closeCamModal}></i></label>
 
           <div id="mastModal" className="ui tiny modal radioModal">
@@ -59,7 +59,7 @@ class CameraRadio extends React.Component {
   
 
           {/* CHEMCAM */}
-          <input className="cameraRadioOption" type="radio" id="chemcam" name="chemcam" checked={this.props.chemcam} onClick={this.props.radioClicked} />
+          <input className="cameraRadioOption" type="radio" id="chemcam" name="camera" checked={this.props.camera === "chemcam" ? true : false} onChange={this.props.radioClicked} />
           <label htmlFor="chemcam">CHEMCAM<i className="camQuestion far fa-question-circle" onMouseEnter={this.openCamModal} onMouseOut={this.closeCamModal}></i></label>
 
           <div id="chemcamModal" className="ui tiny modal radioModal">
@@ -70,7 +70,7 @@ class CameraRadio extends React.Component {
   
 
           {/* NAVCAM */}
-          <input className="cameraRadioOption" type="radio" id="navcam" name="navcam" checked={this.props.navcam} onClick={this.props.radioClicked} />
+          <input className="cameraRadioOption" type="radio" id="navcam" name="camera" checked={this.props.camera === "navcam" ? true : false} onChange={this.props.radioClicked} />
           <label htmlFor="navcam">NAVCAM<i className="camQuestion far fa-question-circle" onMouseEnter={this.openCamModal} onMouseOut={this.closeCamModal}></i></label>
 
           <div id="navcamModal" className="ui tiny modal radioModal">
