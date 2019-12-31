@@ -1,11 +1,18 @@
 import React from "react";
 import LibraryModal from './LibraryModal'
+import { connect } from 'react-redux';
+import Swal from 'sweetalert2'
 
 
 class Img extends React.Component {
 
   openModal = () => {
-    document.querySelector(`#libListModal-${this.props.photo.id}`).classList.add("active")
+    this.props.currentUser.username ?
+    (document.querySelector(`#libListModal-${this.props.photo.id}`).classList.add("active"))
+    : (Swal.fire({
+      icon: 'error',
+      text: "Please log in"
+    }))
   }
 
   closeModal = () => {
@@ -24,4 +31,8 @@ class Img extends React.Component {
   }
 }
 
-export default Img
+const mapStateToProps = (state) => {
+  return { currentUser: state.currentUser}
+}
+
+export default connect(mapStateToProps)(Img)

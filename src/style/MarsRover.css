@@ -16,7 +16,7 @@
   margin: 5vh 0 1vh 0;
   text-align: center;
   display: grid;
-  grid-template-columns: 20vw 60vw 20vw;
+  grid-template-columns: 17.5vw 65vw 17.5vw;
   grid-template-rows: 7vh 7vh;
   grid-template-areas: 
     ". title question"
@@ -48,7 +48,7 @@
   grid-area: buttons;
   border-style: solid;
   border-color: #93291E;
-  width: 55vw;
+  width: 60vw;
   margin-left: 2.5vw;
   padding: 1.3vh 0 1.2vh 0;
 }
@@ -249,8 +249,4 @@
 
 .curiosityCon {
   margin-bottom: 5vh;
-}
-
-.spandoppCon {
-  padding-top: 5vh;
 }

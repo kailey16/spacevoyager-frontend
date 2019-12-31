@@ -8,7 +8,7 @@ class ImgContainer extends React.Component {
   state = {
     bigImage: false,
     showImgUrl: ""
-  } 
+  }  
 
   bigImageShow = (imgUrl) => {
     this.setState(pre => {return {bigImage: !pre.bigImage, showImgUrl: imgUrl}})

@@ -13,9 +13,9 @@ class MyItem extends React.Component {
     this.getMediaSrc()
   }
 
-  componentDidUpdate() {
-    this.getMediaSrc()
-  }
+  // componentDidUpdate() {
+  //   this.getMediaSrc()
+  // }
 
   componentWillUnmount() {
 
@@ -57,7 +57,7 @@ class MyItem extends React.Component {
           <video className="mediaVedio" controls src={this.state.media_url} />
           </div>)
           : (<div>
-          <img className="mediaImage" alt="myItem" src={this.state.media_url}/>
+          <img className="mediaImage" alt="myItem" src={this.state.media_url} onClick={() => this.props.bigImageShow(this.state.media_url)}/>
           </div>)
           }
           <div className="mediaDescription">{this.props.item.description}</div>

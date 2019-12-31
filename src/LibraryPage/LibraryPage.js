@@ -4,11 +4,14 @@ import { Link, withRouter } from "react-router-dom";
 import '../style/Library.css'
 import MyItem from './MyItem'
 import { deleteLibrary } from '../redux/actions-library'
+import BigImagePage from '../MarsRover/BigImagePage'
 
 
 class LibraryPage extends React.Component {
   state = { 
-    itemsOfLib: []
+    itemsOfLib: [],
+    bigImage: false,
+    showImgUrl: ""
   }
 
   componentDidMount() {
@@ -22,6 +25,10 @@ class LibraryPage extends React.Component {
     .then(resp => resp.json())
     .then(itemsArray => this.setState({itemsOfLib: itemsArray}))
     }
+  }
+
+  bigImageShow = (imgUrl) => {
+    this.setState(pre => {return {bigImage: !pre.bigImage, showImgUrl: imgUrl}})
   }
 
   deleteItem = (itemId) => {
@@ -46,10 +53,12 @@ class LibraryPage extends React.Component {
               <div id="libDeleteButton" className="ui inverted red button" onClick={this.deleteLibrary}>Delete Library</div>
             </Link>
           </div>
-          
+          {this.state.bigImage ?
+          <BigImagePage showImgUrl={this.state.showImgUrl} bigImageShow={this.bigImageShow} />
+          :
           <div className="LibMediaContainer">
-            {this.state.itemsOfLib.map((item, i) => <MyItem key={i} item={item} libId={this.props.libObj.id} deleteItem={this.deleteItem} />)}
-          </div>
+            {this.state.itemsOfLib.map((item, i) => <MyItem key={i} item={item} libId={this.props.libObj.id} deleteItem={this.deleteItem} bigImageShow={this.bigImageShow} />)}
+          </div>}
         </div>)
         : null}
       </div>

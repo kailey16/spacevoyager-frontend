@@ -35,14 +35,14 @@
   height: 33vh;
   background-image: linear-gradient(to right, rgba(83, 31, 7, 0.5), rgb(15, 15, 15));
   font-weight: 500;
-  border-radius: 130px;
+  border-radius: 90px;
 }
 
 .latestDayCardTop {
   padding: 3vh 0 2vh 0;
   background-image: linear-gradient(to right, rgba(196, 151, 131, 0.212), rgba(138, 46, 4, 0.555));
-  border-top-left-radius: 150px;
-  border-top-right-radius: 150px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
 }
 
 .latestDayCardBottom {

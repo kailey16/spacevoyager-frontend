@@ -1,5 +1,7 @@
 import React from "react";
 import LibraryModal from '../MarsRover/LibraryModal'
+import { connect } from 'react-redux';
+import Swal from 'sweetalert2'
 
 
 class Media extends React.Component {
@@ -22,7 +24,12 @@ class Media extends React.Component {
   }
 
   openModal = () => {
-    document.getElementById(this.modalId()).classList.add("active")
+    this.props.currentUser.username ?
+    (document.getElementById(this.modalId()).classList.add("active"))
+    : (Swal.fire({
+      icon: 'error',
+      text: "Please log in"
+    }))
   }
 
   closeModal = () => {
@@ -57,5 +64,8 @@ class Media extends React.Component {
 
 }
 
+const mapStateToProps = (state) => {
+  return { currentUser: state.currentUser}
+}
 
-export default Media
+export default connect(mapStateToProps)(Media)
