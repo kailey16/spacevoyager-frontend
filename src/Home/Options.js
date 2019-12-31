@@ -19,7 +19,7 @@ const Options = () => {
         </div>
 
         <div className="OptionCard">
-          <i class="fas fa-globe-europe opCardIcon"></i>
+          <i className="fas fa-globe-europe opCardIcon"></i>
           <p className="opCardTitle"> Mars Weather</p>
           <p className="opCardText">Check out how was the weather in Mars this week!</p>
         </div>

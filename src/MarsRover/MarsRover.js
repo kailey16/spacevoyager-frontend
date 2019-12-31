@@ -52,7 +52,7 @@ class MarsRover extends React.Component {
     })
 
     return (
-      <div className="MarsRoverPage">
+      <div className="MarsRoverPage"> 
         <RoverInfoModal modalClose={this.modalClose}/>
         <CameraRadio camera={this.state.camera} radioClicked={this.radioClicked} showallClicked={this.showallClicked} modalOpen={this.modalOpen} dateChange={this.dateChange} date={this.state.date}/>
         <div className="calendar">

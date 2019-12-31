@@ -17,6 +17,10 @@ class MyItem extends React.Component {
     this.getMediaSrc()
   }
 
+  componentWillUnmount() {
+
+  }
+
   getMediaSrc = () => {
     if (this.props.item.category === "nasalibrary") {
       fetch(`${this.props.item.media_url}`)

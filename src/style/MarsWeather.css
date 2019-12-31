@@ -20,7 +20,7 @@
   grid-area: infoCon;
   justify-self: start;
   width: 25vw;
-  margin: 17vh 0 0 10vw;
+  margin: 16vh 0 0 10vw;
   font-size: 1.1vw;
 }
 
@@ -30,19 +30,19 @@
 .latestDayCard {
   grid-area: lastDay;
   text-align: center;
-  margin: 11vh 0 0 21vw;
+  margin: 12vh 0 0 20vw;
   width: 17vw;
   height: 33vh;
   background-image: linear-gradient(to right, rgba(83, 31, 7, 0.5), rgb(15, 15, 15));
   font-weight: 500;
-  border-radius: 70px;
+  border-radius: 130px;
 }
 
 .latestDayCardTop {
   padding: 3vh 0 2vh 0;
-  background-image: linear-gradient(to right, rgba(216, 138, 102, 0.39), rgba(114, 39, 5, 0.555));
-  border-top-left-radius: 70px;
-  border-top-right-radius: 70px;
+  background-image: linear-gradient(to right, rgba(196, 151, 131, 0.212), rgba(138, 46, 4, 0.555));
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
 }
 
 .latestDayCardBottom {
@@ -52,6 +52,9 @@
 .ldSol {
   font-size: 1.4vw;
   margin: 0 0 1vh 0;
+}
+#solQuestionIcon:hover, #solQuestionIcon:active {
+  font-size: 1.5vw;
 }
 
 .ldDate {
@@ -87,7 +90,7 @@
   grid-area: season;
   font-size: 1.2vw;
   margin: 5vh 0 0 10vw;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .season {

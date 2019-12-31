@@ -17,7 +17,7 @@ class LatestDayCard extends React.Component {
       return (
         <div className="latestDayCard">
           <div className="latestDayCardTop">
-            <p className="ldSol">SOL {this.props.sol} <i className="far fa-question-circle" onMouseEnter={this.openSolModal} onMouseOut={this.closeSolModal}></i></p>
+            <p className="ldSol">SOL {this.props.sol} <i id="solQuestionIcon" className="far fa-question-circle" onMouseEnter={this.openSolModal} onMouseOut={this.closeSolModal}></i></p>
 
             <div id="solModal" className="ui tiny modal">
               <div className="content solModalContent">
