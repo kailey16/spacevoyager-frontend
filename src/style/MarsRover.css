@@ -25,7 +25,7 @@
 
 .roverRadioTitle {
   grid-area: title;
-  font-size: 3vh;
+  font-size: 1.7vw;
 }
 
 /* what is rover? */
@@ -47,7 +47,7 @@
   border-color: #93291E;
   width: 55vw;
   margin-left: 2.5vw;
-  padding: 1.2vh 0 1.2vh 0;
+  padding: 1.3vh 0 1.2vh 0;
 }
 
 .cameraSort {
@@ -58,6 +58,10 @@
 
 .cameraRadioOption {
   margin: 0 0.2vw 0 1vw;
+}
+
+.radioLabel {
+  font-size: 1.1vw;
 }
 
 .camQuestion {
@@ -83,25 +87,47 @@
 
 #fhazModal {
   margin-left: 8vw;
+  font-size: 1vw;
 }
 
 #rhazModal {
   margin-left: 15vw;
+  font-size: 1vw;
 }
 
 #mastModal {
   margin-left: 20vw;
+  font-size: 1vw;
 }
 
 #chemcamModal {
   margin-left: 28vw;
+  font-size: 1vw;
 }
 
 #navcamModal {
   margin-left: 35vw;
+  font-size: 1vw;
 }
 
 
+
+
+/* no pic of the day */
+.nopicIcon {
+  font-size: 4vw;
+  margin-bottom: 1vh;
+}
+
+.noPictureMessage {
+  font-size: 1.3vw;
+  height: 20vh;
+  width: 40vw;
+  margin: 10vh 0 0 30vw;
+  padding-top: 4vh;
+  background-color: rgba(70, 68, 68, 0.397);
+  border-radius: 40px;
+}
 
 
 
@@ -113,7 +139,7 @@
   grid-template-columns: 25vw 25vw 25vw;
   grid-template-rows: auto;
   grid-template-areas: 
-    "card card card";
+    "card card2 card";
   grid-column-gap: 2.5vw;
   grid-row-gap: 2.5vw;
 }
@@ -165,6 +191,7 @@
   width: 80vw;
   height: auto;
   margin: 0 0 0 10vw;
+  padding-bottom: 3vh;
   border-radius: 10px;
 }
 
@@ -174,8 +201,10 @@
 }
 
 .roverModalBody {
-  font-size: 1vw;
+  font-size: 1.1vw;
+  font-weight: 500;
   margin: 5vh 5vw 10vh 5vw;
+  color: rgb(177, 169, 169);
 }
 
 .roverDefCon{
@@ -183,8 +212,9 @@
 }
 
 .roverModalTitle {
-  font-size: 1.2vw;
+  font-size: 1.3vw;
   font-weight: 600;
+  color: rgb(230, 224, 224);
 }
 
 .roverPic {
@@ -195,6 +225,26 @@
   border-radius: 20px;
 }
 
+.roverPic2 {
+  width: 30vw;
+  height: auto;
+  float: right;
+  margin-left: 1vw;
+  border-radius: 20px;
+}
+
+.roverPic3 {
+  width: 30vw;
+  height: auto;
+  float: left;
+  margin-right: 1vw;
+  border-radius: 20px;
+}
+
 .curiosityCon {
   margin-bottom: 5vh;
+}
+
+.spandoppCon {
+  padding-top: 5vh;
 }

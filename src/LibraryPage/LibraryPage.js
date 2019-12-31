@@ -36,15 +36,16 @@ class LibraryPage extends React.Component {
 
   render() {
     return (
-      <div className="LibraryPage">
+      <div>
         {this.props.libObj ? (
-        <div>
-          <p className="libTitle">{this.props.libObj.title}</p>
-          <p className="libText">{this.props.libObj.description}</p>
-
-          <Link to={`/profile`}>
-            <div id="libDeleteButton" className="ui inverted red button" onClick={this.deleteLibrary}>Delete Library</div>
-          </Link>
+        <div className="LibraryPage">
+          <div id="libInfoCon">
+            <p className="libTitle">{this.props.libObj.title.toUpperCase()}</p>
+            <p className="libText">{this.props.libObj.description}</p>
+            <Link to={`/profile`}>
+              <div id="libDeleteButton" className="ui inverted red button" onClick={this.deleteLibrary}>Delete Library</div>
+            </Link>
+          </div>
           
           <div className="LibMediaContainer">
             {this.state.itemsOfLib.map((item, i) => <MyItem key={i} item={item} libId={this.props.libObj.id} deleteItem={this.deleteItem} />)}

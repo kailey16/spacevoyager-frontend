@@ -16,11 +16,12 @@ class MarsRover extends React.Component {
   state = {
     showall: true,
     camera: '',
-    date: ''
+    date: new Date('August 10, 2019')
   }
 
   componentDidMount() {
-    this.props.fetchingRoverPhotos()
+    // this.props.fetchingRoverPhotos()
+    this.props.fetchingRoverPhotosWithDate(this.state.date)
   }
 
   radioClicked = (e) => {

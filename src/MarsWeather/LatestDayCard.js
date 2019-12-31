@@ -21,7 +21,7 @@ class LatestDayCard extends React.Component {
 
             <div id="solModal" className="ui tiny modal">
               <div className="content solModalContent">
-                Sol is a Mars solar day, a 'Martian day.' The average duration of sol is 24 hours, 39 minutes and 35.244 seconds, which is equivalent to 1.03 Earth days.
+                Sol is a Mars solar day, a Martian day. The average duration of sol is 24 hours, 39 minutes and 35.244 seconds, which is equivalent to 1.03 Earth days.
               </div>
             </div>
 

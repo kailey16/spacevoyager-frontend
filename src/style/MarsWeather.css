@@ -163,6 +163,9 @@
   height: 80vh;
   margin: 5vh 0 0 5vw;
   border-radius: 10px;
+  font-size: 1.1vw;
+  font-weight: 500;
+  color: rgb(177, 169, 169);
 }
 
 .infoModalTop {
@@ -172,8 +175,9 @@
 
 .infoModalTitle {
   font-size: 1.3vw;
-  font-weight: 500;
+  font-weight: 600;
   padding-left: 4vw;
+  color: rgb(230, 224, 224);
 }
 
 #infoModalButton {
@@ -213,9 +217,8 @@
 .weatherModalText {
   margin: 0 3vw 0 3vw;
   padding: 1vw 0 0 1vw;
-  font-size: 1vw;
   height: 25vh;
   overflow: scroll;
-  background-color: rgba(41, 40, 40, 0.753);
+  background-color: rgba(116, 111, 111, 0.178);
   border-radius: 10px;
 }
