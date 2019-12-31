@@ -12,7 +12,8 @@ class Img extends React.Component {
     : (Swal.fire({
       icon: 'error',
       text: "Please log in"
-    }))
+    })
+    )
   }
 
   closeModal = () => {

@@ -11,6 +11,8 @@ import LibraryPage from './LibraryPage/LibraryPage'
 import LoginPage from './LoginSignup/LoginPage'
 import './style/App.css'
 import { getCurrentUser } from './redux/actions'
+import './style/Swal.css'
+
 
 class App extends React.Component {
 

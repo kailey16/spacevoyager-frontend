@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 
 
 ///// Mars Rover page actions 
-// initial fetch to display
+// initial fetch (sol 1000)
 function fetchedRoverPhotos(photos) {
   return {type: "FETCH_ROVERPHOTOS", payload: photos}
 }
@@ -19,6 +19,7 @@ export function fetchingRoverPhotos() {
   } 
 }
 
+//fetch with earth date
 export function fetchingRoverPhotosWithDate(date) {
   return (dispatch) => {
     trackPromise(

@@ -11,6 +11,7 @@
 /* library info container */
 #libInfoCon {
   grid-area: libinfo;
+  font-weight: 500;
 }
 
 .libTitle {

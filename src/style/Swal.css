@@ -1,0 +1,15 @@
+
+.swal2-modal {
+  background-color: rgba(32, 31, 31, 0.959);
+  border: 3px solid white;
+}
+
+#swal2-content {
+  font-size: 1.5vw;
+  color: white;
+  font-weight: 500;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: rgb(63, 124, 39);
+}
