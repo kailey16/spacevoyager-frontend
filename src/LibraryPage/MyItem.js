@@ -9,21 +9,23 @@ class MyItem extends React.Component {
     media_url: ""
   }
 
+  abortController = new AbortController()
+
   componentDidMount() {
     this.getMediaSrc()
   }
 
-  // componentDidUpdate() {
-  //   this.getMediaSrc()
-  // }
+  componentDidUpdate() {
+    this.getMediaSrc()
+  }
 
   componentWillUnmount() {
-
+    this.abortController.abort()
   }
 
   getMediaSrc = () => {
     if (this.props.item.category === "nasalibrary") {
-      fetch(`${this.props.item.media_url}`)
+      fetch(`${this.props.item.media_url}`, {signal: this.abortController.signal})
       .then(res => res.json())
       .then(data => {
         if (this.props.item.media_type === "video") {

@@ -18,7 +18,6 @@ export function saveImgToLibrary(lib, img) {
     }) 
     .then(resp => resp.json())
     .then(item => {
-      console.log(item)
       Swal.fire({
         icon: 'success',
         text: `Successfully saved`
@@ -45,7 +44,6 @@ export function deleteItemFromLib(libId, itemId) {
     })
     .then(resp => resp.json())
     .then(item => {
-      console.log(item)
       Swal.fire({
         icon: 'success',
         text: 'Successfully deleted from the library!'

@@ -14,7 +14,6 @@ class UserInfo extends React.Component {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
       this.setState({apodInfo: data})
     })
   }
