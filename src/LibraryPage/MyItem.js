@@ -42,7 +42,10 @@ class MyItem extends React.Component {
           })
           return this.setState({media_url: mp3Url})
         } else {
-          return this.setState({media_url: data[0]})
+          let imgUrl = data.find(url => {
+            let splittedurl = url.split(".")
+            return splittedurl[splittedurl.length-1] === "jpg" ? true : false})
+          return this.setState({media_url: imgUrl})
         }
       })
     } else {
@@ -64,7 +67,7 @@ class MyItem extends React.Component {
     if (type === "video") {
       mediaTag = <div><video className="mediaVedio" controls src={this.state.media_url} /></div>
     } else if (type === "audio") {
-      mediaTag = <div className="mediaAudio"><audio className="audioPlayer" controls src={this.state.media_url} type="audio/mp3" /></div>
+      mediaTag = <div className="mediaAudio"><p className="audioFile">Audio File</p><audio className="audioPlayer" controls src={this.state.media_url} type="audio/mp3" /></div>
     } else {
       mediaTag = <div><img className="mediaImage" alt="libraryMedia" src={this.state.media_url} onClick={() => this.props.bigImageShow(this.state.media_url)}/></div>
     }

@@ -44,11 +44,17 @@
 .mediaAudio {
   height: 30vh;
   width: 25vw;
+  background-color: rgba(20, 20, 20, 0.575);
+}
+
+.audioFile {
+  padding: 10vh 0 2vh 0;
+  font-size: 1.3vw;
+  font-weight: 500;
 }
 
 .audioPlayer {
   width: 20vw;
-  margin-top: 20vh;
 }
 
 .mediaImage {
