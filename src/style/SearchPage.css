@@ -41,6 +41,16 @@
   width: 25vw;
 }
 
+.mediaAudio {
+  height: 30vh;
+  width: 25vw;
+}
+
+.audioPlayer {
+  width: 20vw;
+  margin-top: 20vh;
+}
+
 .mediaImage {
   margin-top: 1vh;
   height: 30vh;

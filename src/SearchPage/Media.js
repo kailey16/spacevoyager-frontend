@@ -10,16 +10,26 @@ class Media extends React.Component {
   }
 
   componentDidMount(){
+    const type = this.props.media["data"][0]["media_type"];
+
     fetch(`${this.props.media["href"]}`)
     .then(res => res.json())
     .then(data => {
-      if (this.props.media["data"][0]["media_type"] === "video") {
+      if (type === "video") {
         let mp4Url = data.find(url => {
           let splittedurl = url.split(".")
           return splittedurl[splittedurl.length-1] === "mp4" ? true : false
         })
         return this.setState({media_url: mp4Url})
-      } else {return this.setState({media_url: data[0]})}
+      } else if (type === "audio") {
+        let mp3Url = data.find(url => {
+          let splittedurl = url.split(".")
+          return splittedurl[splittedurl.length-1] === "mp3" ? true : false
+        })
+        return this.setState({media_url: mp3Url})
+      } else {
+        return this.setState({media_url: data[0]})
+      }
     })
   }
 
@@ -41,18 +51,22 @@ class Media extends React.Component {
   }
 
   render() {
+
+    const type = this.props.media["data"][0]["media_type"];
+    let mediaTag;
+    if (type === "video") {
+      mediaTag = <div><video className="mediaVedio" controls src={this.state.media_url} /></div>
+    } else if (type === "audio") {
+      mediaTag = <div className="mediaAudio"><audio className="audioPlayer" controls src={this.state.media_url} type="audio/mp3" /></div>
+    } else {
+      mediaTag = <div><img className="mediaImage" alt="libraryMedia" src={this.state.media_url} onClick={() => this.props.bigImageShow(this.state.media_url)}/></div>
+    }
+
     return (
       <div >
         <div className="mediaCard">
           <div className="mediaTitle">{this.props.media["data"][0]["title"]}</div>
-        {this.props.media["data"][0]["media_type"] === "video" ? 
-        (<div>
-        <video className="mediaVedio" controls src={this.state.media_url} />
-        </div>)
-        : (<div>
-        <img className="mediaImage" alt="libraryMedia" src={this.state.media_url} onClick={() => this.props.bigImageShow(this.state.media_url)}/>
-        </div>)
-        }
+        {mediaTag}
         <div className="mediaDescription">{this.props.media["data"][0]["description"]}</div>
         <button id="libSaveButton" className="ui inverted grey basic button" onClick={this.openModal}>Save To My Library</button>
         </div>

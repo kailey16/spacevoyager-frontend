@@ -15,26 +15,35 @@ class MyItem extends React.Component {
     this.getMediaSrc()
   }
 
-  componentDidUpdate() {
-    this.getMediaSrc()
-  }
+  // componentDidUpdate() {
+  //   this.getMediaSrc()
+  // }
 
-  componentWillUnmount() {
-    this.abortController.abort()
-  }
+  // componentWillUnmount() {
+  //   this.abortController.abort()
+  // }
 
   getMediaSrc = () => {
     if (this.props.item.category === "nasalibrary") {
       fetch(`${this.props.item.media_url}`, {signal: this.abortController.signal})
       .then(res => res.json())
       .then(data => {
-        if (this.props.item.media_type === "video") {
+        const type = this.props.item.media_type
+        if (type === "video") {
           let mp4Url = data.find(url => {
             let splittedurl = url.split(".")
             return splittedurl[splittedurl.length-1] === "mp4" ? true : false
           })
           return this.setState({media_url: mp4Url})
-        } else { return this.setState({media_url: data[0]}) }
+        } else if (type === "audio") {
+          let mp3Url = data.find(url => {
+            let splittedurl = url.split(".")
+            return splittedurl[splittedurl.length-1] === "mp3" ? true : false
+          })
+          return this.setState({media_url: mp3Url})
+        } else {
+          return this.setState({media_url: data[0]})
+        }
       })
     } else {
       this.setState({media_url: this.props.item.media_url})
@@ -49,19 +58,22 @@ class MyItem extends React.Component {
   }
 
   render() {
+
+    const type = this.props.item.media_type;
+    let mediaTag;
+    if (type === "video") {
+      mediaTag = <div><video className="mediaVedio" controls src={this.state.media_url} /></div>
+    } else if (type === "audio") {
+      mediaTag = <div className="mediaAudio"><audio className="audioPlayer" controls src={this.state.media_url} type="audio/mp3" /></div>
+    } else {
+      mediaTag = <div><img className="mediaImage" alt="libraryMedia" src={this.state.media_url} onClick={() => this.props.bigImageShow(this.state.media_url)}/></div>
+    }
+
     return (
       <div>
         <div className="mediaCard">
           <div className="mediaTitle">{this.props.item.title}</div>
-
-          {this.props.item.media_type === "video" ? 
-          (<div>
-          <video className="mediaVedio" controls src={this.state.media_url} />
-          </div>)
-          : (<div>
-          <img className="mediaImage" alt="myItem" src={this.state.media_url} onClick={() => this.props.bigImageShow(this.state.media_url)}/>
-          </div>)
-          }
+          {mediaTag}
           <div className="mediaDescription">{this.props.item.description}</div>
           <button id="deleteItemFromLib" className="ui inverted grey basic button" onClick={this.deleteItemClicked}>Delete from Library</button>
         </div>

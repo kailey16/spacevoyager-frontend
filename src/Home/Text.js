@@ -7,9 +7,9 @@ const Text = () => {
         You can sign up for SpaceVoyage to enjoy even further
       </p>
       <p className="textConText">
-        <i class="fas fa-check textCheckIcon"></i>
+        <i className="fas fa-check textCheckIcon"></i>
         Create libraries to store the media and go back to see anytime<br/>
-        <i class="fas fa-check textCheckIcon"></i>
+        <i className="fas fa-check textCheckIcon"></i>
         Checkout NASA's Astronomy Picture of the Day - it changes everyday!<br/>
       </p>
     </div>

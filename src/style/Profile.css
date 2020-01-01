@@ -77,11 +77,10 @@
 }
 
 .LibraryCard {
-  /* border-radius: 40%; */
+  border-radius: 20px;
   display: grid;
   grid-template-columns: 5vw 10vw 3vw;
   grid-template-rows: auto;
-  grid-row-gap: 1vh;
   grid-template-areas:  
     " rocketIcon libtitle xIcon ";
   background-color: rgba(150, 145, 145, 0.2);
@@ -94,18 +93,20 @@
 
 #libraryIcon {
   font-size: 3.5vw;
-  transform: scaleX(-1);
-  margin: 1vh 0 1vh 0;
-}
-
-#libraryDeleteButton {
-  grid-area: xIcon;
+  /* transform: scaleX(-1); */
+  margin: 1vh 0 1vh 1vw;
 }
 
 .libCardTitle {
   grid-area: libtitle;
   font-size: 1.1vw;
   font-weight: 500;
+  padding-top: 2.5vh;
+}
+
+#libraryDeleteButton {
+  grid-area: xIcon;
+  margin: 1vh 0 0 1vw;
 }
 
 
@@ -115,15 +116,14 @@
 
 /* library form */
 .NewLibraryForm {
-  margin: 10vh 0 0 2vw;
+  margin: 7vh 0 0 2vw;
   padding: 3vh;
   grid-area: libraryform;
   width: 20vw;
   height: 40vh;
-  /* text-align: center; */
   border: 2px solid white;
   border-radius: 20px;
-  background-color: rgba(211, 89, 89, 0.329);
+  background-color: rgba(211, 89, 89, 0.205);
 }
 
 .libFormTitle {
