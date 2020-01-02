@@ -32,7 +32,7 @@ class MarsWeather extends React.Component {
       <div className="MarsWeatherPage">
         <MarsWeatherInfo infoModalOpen={this.infoModalOpen} />
         <LatestDayCard sol={lastSol} latestDayInfo={latestDayInfo}/>
-        <div className="seasonCon">
+        <div className="seasonCon animated fadeInRight">
           Current season in Mars is <span className="season">{latestDayInfo ? latestDayInfo.Season : null}</span>
         </div>
         <WeatherContainer info={this.props.info} />

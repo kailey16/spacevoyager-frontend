@@ -15,7 +15,7 @@ class LatestDayCard extends React.Component {
       const { AT, First_UTC } = this.props.latestDayInfo  
       const date = new Date(First_UTC).toDateString()
       return (
-        <div className="latestDayCard">
+        <div className="latestDayCard animated flipInY">
           <div className="latestDayCardTop">
             <p className="ldSol">SOL {this.props.sol} <i id="solQuestionIcon" className="far fa-question-circle" onMouseEnter={this.openSolModal} onMouseOut={this.closeSolModal}></i></p>
 

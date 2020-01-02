@@ -6,7 +6,7 @@ class LibraryContainer extends React.Component {
 
   render() {
     return (
-      <div className="LibraryContainer">
+      <div className="LibraryContainer animated fadeInDownBig delay-1s">
         <p className="libConTitle">My Libraries</p>
         <div className="libraries">
           {this.props.myLibraries.map(lib => <LibraryCard key={lib.id} lib={lib} />)}

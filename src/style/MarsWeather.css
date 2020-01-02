@@ -37,6 +37,9 @@
   background-image: linear-gradient(to right, rgba(83, 31, 7, 0.5), rgb(15, 15, 15));
   font-weight: 500;
   border-radius: 90px;
+
+  animation-duration: 3s;
+  animation-delay: 1s;
 }
 
 .latestDayCardTop {
@@ -222,7 +225,7 @@
   margin: 0 3vw 0 3vw;
   padding: 1vw 0 0 1vw;
   height: 25vh;
-  overflow: scroll;
+  overflow: auto;
   background-color: rgba(116, 111, 111, 0.178);
   border-radius: 10px;
 }

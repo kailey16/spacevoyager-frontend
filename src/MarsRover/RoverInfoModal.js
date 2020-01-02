@@ -2,7 +2,7 @@ import React from "react";
 
 const RoverInfoModal = (props) => {
   return(
-    <div id="roverModal" className="ui basic modal">
+    <div id="roverModal" className="ui basic modal  animated zoomIn">
       <button id="roverModalButton" className="ui inverted grey basic button" onClick={props.modalClose}>Exit</button>
       
       <div className="roverModalBody">

@@ -23,8 +23,7 @@ class UserInfo extends React.Component {
 
     return (
       <div className="UserInfo">
-        <p className="userWelcome">Welcome {this.props.currentUser.username}</p>
-        <div className="apodCard">
+        <div className="apodCard animated fadeInLeftBig">
           <p className="apodTitle">NASA's Astronomy Picture of the Day on <span className="apodDate">{date}</span></p>
           <p className="apodCardTitle">{title}</p>
           {media_type === "video" ? 

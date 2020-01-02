@@ -2,7 +2,7 @@ import React from "react";
 
 const WeatherInfoModal = (props) => {
   return(
-    <div id="weatherModal" className="ui basic modal">
+    <div id="weatherModal" className="ui basic modal animated zoomIn">
     <div className="infoModalTop">
       <button id="infoModalButton" className="ui inverted grey basic button" onClick={props.infoModalClose}>Exit</button>
       <p className="infoModalTitle">Climate of MARS</p>
