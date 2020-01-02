@@ -15,13 +15,13 @@ class CameraRadio extends React.Component {
 
     return (
       <div className="roverCameraRadio">
-        <div className="roverRadioTitle">Explore photos taken by MARS Rover Cameras</div>
-        <div className="questionBox">
+        <div className="roverRadioTitle animated zoomIn">Explore photos taken by MARS Rover Cameras</div>
+        <div className="questionBox animated rotateInDownLeft delay-2s">
           <i id="roverQuestion" className="far fa-question-circle" onClick={this.props.modalOpen}></i><br/>
           What is MARS rover?
         </div>
   
-        <div className="radioButtonBox">
+        <div className="radioButtonBox animated zoomIn delay-1s">
           <p className="cameraSort">Rover Cameras : </p>
           
           {/* FHAZ */}

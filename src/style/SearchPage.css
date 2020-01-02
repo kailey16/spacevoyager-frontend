@@ -36,6 +36,10 @@
   height: 57vh;
 }
 
+.mediaCard:hover, .mediaCard:active {
+  width: 26vw;
+}
+
 .mediaVedio {
   height: 30vh;
   width: 25vw;
@@ -70,7 +74,7 @@
 }
 
 .mediaDescription {
-  overflow: scroll;
+  overflow: auto;
   height: 11vh;
 }
 

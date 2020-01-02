@@ -25,7 +25,7 @@ class SearchPage extends React.Component {
   render() {
     return (
       <div className="SearchPage">
-        <div className="searchFormContinaer">
+        <div className="searchFormContinaer animated zoomIn">
           <p>Search anything you want to see from the NASA library</p>
           <form className="ui form" onSubmit={this.handleFormSubmitted}>
             <div className="field">
