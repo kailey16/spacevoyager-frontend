@@ -54,9 +54,11 @@ class MarsRover extends React.Component {
     return (
       <div className="MarsRoverPage"> 
         <RoverInfoModal modalClose={this.modalClose}/>
+        <div className="animated zoomIn">
         <CameraRadio camera={this.state.camera} radioClicked={this.radioClicked} showallClicked={this.showallClicked} modalOpen={this.modalOpen} dateChange={this.dateChange} date={this.state.date}/>
-        <div className="calendar animated zoomIn delay-1s">
+        <div className="calendar">
           <div>Select a date to see photos taken that day <DatePicker selected={this.state.date} onChange={this.dateChange} /></div>
+        </div>
         </div>
         <ImgContainer photos={rendering_photos}/>
       </div>
