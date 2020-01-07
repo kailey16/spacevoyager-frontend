@@ -36,7 +36,7 @@
   height: 33vh;
   background-image: linear-gradient(to right, rgba(83, 31, 7, 0.5), rgb(15, 15, 15));
   font-weight: 500;
-  border-radius: 90px;
+  border-radius: 100px;
 
   animation-duration: 3s;
   animation-delay: 1s;
